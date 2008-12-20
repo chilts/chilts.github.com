@@ -8,3 +8,9 @@ Over the years, I've had various wiki repositories, some of which have fallen by
 Now I'm gonna collect all my technical wiki know how here, just so I can have it all in the same place AND have "Jekyll":http://github.com/mojombo/jekyll render it all in a nice fashion too.
 
 Oh and did I mention that it'll all live in Git - awesome!
+
+h2. Design
+
+This wiki site is not meant to be designed as such. I just used the "960 Grid System":http://960.gs/ system so that I could get something with a layout up and going as quickly as possible, which has so far worked great.
+
+(Ends)
