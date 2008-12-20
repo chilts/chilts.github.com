@@ -1,0 +1,10 @@
+---
+layout: default
+title: About
+---
+
+Over the years, I've had various wiki repositories, some of which have fallen by the wayside, some of which are half-finished and others which aren't in a good place.
+
+Now I'm gonna collect all my technical wiki know how here, just so I can have it all in the same place AND have "Jekyll":http://github.com/mojombo/jekyll render it all in a nice fashion too.
+
+Oh and did I mention that it'll all live in Git - awesome!
