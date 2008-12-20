@@ -1,0 +1,17 @@
+---
+layout: default
+title: Bookmarks
+---
+
+These bookmarks are roughly categorised but searching may be the best thing for you.
+
+h2. CSS
+
+* "960 Grid System":http://960.gs/
+
+h2. JavaScript
+
+* "JQuery":http://jquery.com/
+
+(Ends)
+
