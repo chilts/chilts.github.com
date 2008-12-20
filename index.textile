@@ -1,0 +1,6 @@
+---
+layout: default
+title: Andy Chilton's Wiki
+---
+
+This is just the things that I want to remember. If they become useful to you, then great!
