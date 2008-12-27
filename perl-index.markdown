@@ -21,4 +21,8 @@ Some modules I really like and direct links to them on CPAN.
 
 * [Template::Toolkit](http://search.cpan.org/dist/Template-Toolkit/)
 
+## Digest
+
+* [Digest::MD5](http://search.cpan.org/dist/Digest-MD5/)
+
 (Ends)
