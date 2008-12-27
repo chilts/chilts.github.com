@@ -1,0 +1,8 @@
+body {
+    background-color: #ddd;
+}
+
+.grid_9, .grid_3 {
+    background-color: #eee;
+    margin: 10px;
+}
