@@ -26,26 +26,30 @@
             <a href="/about.html">About</a>
         </p>
 
-    </div><!-- header -->
+    </div><!-- #header -->
     <div class="clear">&nbsp;</div>
 
-    <div id="menu" class="grid_3">
-        <h2>Main Categories</h2>
-        <ul>
-            <li><a href="/perl-index.html">Perl</a></li>
-            <li><a href="/git-index.html">Git</a></li>
-            <li><a href="/vim-index.html">Vim</a></li>
-            <li><a href="/bash-index.html">Bash</a></li>
-            <li><a href="/misc-index.html">Misc</a></li>
-        </ul>
-    </div><!-- menu -->
-    <div id="content" class="grid_9">
+    <div class="grid_3">
+        <div id="menu">
+            <h2>Main Categories</h2>
+            <ul>
+                <li><a href="/perl-index.html">Perl</a></li>
+                <li><a href="/git-index.html">Git</a></li>
+                <li><a href="/vim-index.html">Vim</a></li>
+                <li><a href="/bash-index.html">Bash</a></li>
+                <li><a href="/misc-index.html">Misc</a></li>
+            </ul>
+        </div><!-- #menu -->
+    </div><!-- .grid_3 -->
+    <div class="grid_9">
+        <div id="content">
 
-        <h1>{{ page.title }}</h1>
+            <h1>{{ page.title }}</h1>
 
-        {{ content }}
+            {{ content }}
 
-    </div><!-- content -->
+        </div><!-- #content -->
+    </div><!-- .grid_9 -->
     <div class="clear">&nbsp;</div>
 
     <div id="footer" class="grid_12">
