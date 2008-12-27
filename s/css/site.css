@@ -2,7 +2,7 @@ body {
     background-color: #ddd;
 }
 
-.grid_9, .grid_3 {
+#menu, #content {
     background-color: #eee;
     padding: 10px;
 }
