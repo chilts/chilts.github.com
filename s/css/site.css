@@ -2,7 +2,7 @@ body {
     background-color: #ddd;
 }
 
-#menu, #content {
+#menu, #content, #help {
     background-color: #eee;
     padding: 10px;
 }
