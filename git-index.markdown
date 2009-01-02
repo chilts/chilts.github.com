@@ -5,7 +5,7 @@ title: Git Index
 
 Other Git pages:
 
-* "Using Different Remotes":git-using-different-remotes.html
+* [Using Different Remotes](git-using-different-remotes.html)
 
 Some helper Git things I always forget:
 
