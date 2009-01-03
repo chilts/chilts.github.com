@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Git: Using Different Remotes
+title: Git - Using Different Remotes
 ---
 
 This quick guide is to help me when using different remotes. It was also written for Victor though since I'm still fairly new to Git I'm also using this as an exercise for myself.

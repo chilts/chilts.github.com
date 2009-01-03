@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Git: Converting from Subversion
+title: Git - Converting from Subversion
 ---
 
 This little helper script can be used to convert an SVN repository into a Git

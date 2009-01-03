@@ -6,10 +6,17 @@ title: Git Index
 Other Git pages:
 
 * [Using Different Remotes](git-using-different-remotes.html)
+* [Converting from SVN](git-converting-from-svn.html)
 
 Some helper Git things I always forget:
 
 ## Branching
+
+Create a new branch (called 'packaging') which you then push to the origin:
+
+    $ git branch packaging
+    $ git checkout packaging
+    $ git push origin packaging
 
 Creating a new branch which follows a remote branch (in this case 'packaging'):
 
