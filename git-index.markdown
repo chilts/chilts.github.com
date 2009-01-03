@@ -31,6 +31,21 @@ Creating a new branch which follows a remote branch (in this case 'packaging'):
     $ git checkout packaging
     Switched to branch "packaging"
 
+To remove a remote branch, firstly delete the local branch, then push it:
+
+    $ git branch -a
+      master
+    * packaging
+      tbd
+      origin/HEAD
+      origin/master
+      origin/tbd
+      origin/packaging
+    $ git branch -D packaging
+    $ git push origin :packaging
+    To git@github.com:andychilton/zaapt.git
+     - [deleted]         debian
+
 ## Remotes
 
 To add a new remote:
