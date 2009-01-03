@@ -54,4 +54,15 @@ To add a new remote:
      * [new tag]         debian/0.1.0-1 -> debian/0.1.0-1
      * [new tag]         upstream/0.1.0 -> upstream/0.1.0
 
+## Removing Your Last Commit
+
+(Presuming you haven't pushed this branch anywhere yet.)
+
+Firstly, show the latest commit to make sure it's the one you want to reset, then reset it:
+
+    $ git show
+    $ git reset --hard HEAD~1
+
+Note: `git reset --hard HEAD^` also does the same thing.
+
 (Ends)
