@@ -3,6 +3,8 @@ layout: default
 title: Misc Index
 ---
 
-ToDo
+Some bits and pieces which don't have a home anywhere else.
+
+* [IRSSI, including keyboard shortcuts](irssi.html)
 
 (Ends)
