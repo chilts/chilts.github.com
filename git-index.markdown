@@ -87,4 +87,10 @@ Firstly, show the latest commit to make sure it's the one you want to reset, the
 
 Note: `git reset --hard HEAD^` also does the same thing.
 
+## Resetting the local changes on your Repo
+
+Just:
+
+    $ git reset --hard HEAD
+
 (Ends)
