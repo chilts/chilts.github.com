@@ -5,7 +5,7 @@ title: Perl Index
 
 Other Perl Links:
 
-* [one Liners](perl-one-liners.html)
+* [One Liners](perl-one-liners.html)
 
 Some modules I really like and direct links to them on CPAN.
 
