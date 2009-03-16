@@ -3,6 +3,112 @@ layout: default
 title: Vim Index
 ---
 
-ToDo
+## Files
+
+ :e!                Edit file (like revert, if file has changed elsewhere
+ :e!                Edit file always (like revert above, even if file has been edited)
+ gf                 Open file underneath the cursor ('goto file')
+
+## Movement
+
+ j                  Move the cursor up one line.
+ k                  Down one line.
+ l                  Right one character.
+ h                  Left one character.
+ e                  To the end of a word.
+ E                  To the end of a whitespace-delimited word.
+ b                  To the beginning of a word.
+ B                  To the beginning of a whitespace-delimited word.
+ 0                  To the beginning of a line.
+ ^                  To the first non-whitespace character of a line.
+ $                  To the end of a line.
+ H                  To the first line of the screen.
+ M                  To the middle line of the screen.
+ L                  To the the last line of the screen.
+ :n                 Jump to line number n. For example, to jump to line 42, you'd type :42
+
+## Inserting/Overwriting Text
+
+ i                  Insert before cursor
+ I 	                Insert to the start of the current line.
+ a 	                Append after cursor.
+ A 	                Append to the end of the current line.
+ o 	                Open a new line below and insert.
+ O 	                Open a new line above and insert.
+ C 	                Change the rest of the current line.
+ r 	                Overwrite one character. After overwriting the single character, go back to command mode.
+ R 	                Enter insert mode but replace characters rather than inserting.
+ ESC                Exit insert/overwrite mode and go back to command mode.
+
+Further:
+
+ gI                 Insert text in column 1 [count] times
+
+Examples:
+
+ 8gI[space][esc]    Insert 8 spaces into column one
+
+## Deleting Text
+
+ x                  Delete characters under the cursor.
+ X                  Delete characters before the cursor.
+ dd or :d           Delete [count] lines (starting with current)
+ d{motion}          Delete text that {motion} moves over
+ D                  delete from current char to end of line
+
+## Visual Mode
+
+ v                  Start highlighting characters. Use the normal movement keys and commands to select text for highlighting.
+ V                  Start highlighting lines.
+ [esc]              Exit visual mode and return to command mode.
+
+## Editing blocks of text (those marked (V) work in Visual Mode)
+
+ ~                  Change the case of characters. This works both in visual and command mode. In visual mode, change the case of highlighted characters. In command mode, change the case of the character uder cursor.
+ > (V)              Shift right.
+ < (V)              Shift left.
+ c (V)              Change the highlighted text.
+ y (V)              Yank the highlighted text. In Winblows terms, "copy the selected text to clipboard."
+ d (V)              Delete the highlighted text. In Winblows terms, "cut the selected text to clipboard."
+ yy or :y or Y      Yank the current line. You don't need to highlight it first.
+ dd or :d           Delete the current line. Again, you don't need to highlight it first.
+ p                  In Winblows terms, "paste" the contents of the "clipboard". In Vim terms, you "put" the text you yanked or deleted. Put characters after the cursor. Put lines below the current line.
+ P                  Put characters before the cursor. Put lines above the current line.
+
+## Undo and Reset
+
+ u                  Undo the last action.
+ U                  Undo all the latest changes that were made to the current line.
+ Ctrl + r           Redo.
+
+## Search
+
+ /pattern           Search the file for pattern.
+ n                  Scan for next search match in the same direction.
+ N                  Scan for next search match but opposite direction.
+
+## Replace
+
+ :rs/foo/bar/a      Substitute foo with bar. r determines the range and a determines the arguments.
+The range (r) can be
+nothing 	Work on current line only.
+number 	Work on the line whose number you give.
+% 	The whole file.
+
+Arguments (a) can be:
+
+ g                  Replace all occurrences in the line. Without this, Vim replaces only the first occurrences in each line.
+ i                  Ignore case for the search pattern.
+ I                  Don't ignore case.
+ c                  Confirm each substitution. You can type y to substitute this match, n to skip this match, a to substitute this and all the remaining matches ("Yes to all"), and q to quit substitution.
+
+Examples:
+
+ :452s/foo/bar/     Replace the first occurrence of the word foo with bar on line number 452.
+ :s/foo/bar/g       Replace every occurrence of the word foo with bar on current line.
+ :%s/foo/bar/g      Replace every occurrence of the word foo with bar in the whole file.
+ :%s/foo/bar/gi     The same as above, but ignore the case of the pattern you want to substitute. This replaces foo, FOO, Foo, and so on.
+ :%s/foo/bar/gc     Confirm every substitution.
+ :%s/foo/bar/c      For each line on the file, replace the first occurrence of foo with bar and confirm every substitution.
 
 (Ends)
