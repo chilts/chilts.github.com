@@ -2,7 +2,7 @@
 layout: post
 title: First Post
 published: true
-category: (recipe|biking|webapi|nodejs|perl)
+category: nodejs
 tags:
   - amazon
   - ec2
@@ -12,3 +12,9 @@ tags:
   - dessert
 ---
 Hello, this is the first post.
+
+## Hello, World! ##
+
+Something here.
+
+(Ends)
