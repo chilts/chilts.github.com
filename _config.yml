@@ -1,7 +1,3 @@
-# This is the default format. 
-# For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink: /blog/:year/:month/:day/:title
-
 exclude: [README.md, _posts/skeleton-post.md]
 auto: true
 pygments: true
@@ -10,7 +6,6 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : chilts.org
-# tagline: Geek stuff, Node.js, Perl, Web APIs and other bits and bobs.
 tagline: Love JavaScript, love Node.js, love Perl, love Web APIs, love Git, love SQL, love NoSQL and love playing with tech.
 author :
   name : Andrew.Chilton
@@ -18,15 +13,10 @@ author :
   github : chilts
   twitter : andychilton
 
-# The production_url is only used when full-domain names are needed
-# such as sitemap.txt 
-# Most places will/should use BASE_PATH to make the urls
-#
-# If you have set a CNAME (pages.github.com) set your custom domain here.
-# Else if you are pushing to username.github.com, replace with your username.
-# Finally if you are pushing to a GitHub project page, include the project name at the end.
-#
+# general site/blog stuff
 url : http://chilts.org
+permalink: /blog/:year/:month/:day/:title
+paginator: false
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
