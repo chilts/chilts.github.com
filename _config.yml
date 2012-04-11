@@ -1,4 +1,4 @@
-exclude: [README.md, _posts/skeleton-post.md]
+exclude: [README.md, _posts/skeleton-post.md, Makefile]
 auto: true
 pygments: true
 
