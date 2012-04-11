@@ -2,7 +2,6 @@
 layout : page
 title  : Wiki
 header : Wiki
-group  : navigation
 ---
 
 This is just the things that I want to remember. If they become useful to you, then great!
