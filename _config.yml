@@ -8,7 +8,7 @@ pygments: true
 title : chilts.org
 tagline: Love JavaScript, love Node.js, love Perl, love Web APIs, love Git, love SQL, love NoSQL and love playing with tech.
 author :
-  name : Andrew.Chilton
+  name : Andrew Chilton
   email : andychilton@gmail.com
   github : chilts
   twitter : andychilton
