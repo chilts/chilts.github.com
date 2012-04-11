@@ -18,6 +18,15 @@ url : http://chilts.org
 permalink: /blog/:year/:month/:day/:title.html
 paginator: false
 
+# topnav
+topnav:
+- text : Blog
+  url  : /blog/
+- text : Wiki
+  url  : /wiki/
+- text : About
+  url  : /about.html
+
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :

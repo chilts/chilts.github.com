@@ -32,9 +32,13 @@
         <div class="container">
           <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
           <ul class="nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
+  {% for node in site.topnav %}
+    {% if page.url == node.url %}
+        <li class="active"><a href="{{ node.url }}" class="active">{{ node.text }}</a></li>
+    {% else %}
+        <li><a href="{{ node.url }}">{{ node.text }}</a></li>
+    {% endif %}
+  {% endfor %}
           </ul>
         </div>
       </div>
