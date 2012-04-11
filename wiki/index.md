@@ -1,0 +1,14 @@
+---
+layout : page
+title  : Main Wiki Index
+header : Wiki
+group  : navigation
+---
+
+This is just the things that I want to remember. If they become useful to you, then great!
+
+## Quick Links to Useful Pages ##
+
+* "Bookmarks":bookmarks.html
+
+(Ends)
