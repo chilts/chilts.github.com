@@ -24,12 +24,12 @@
   -->
   </head>
 
-  <body>
+  <body style="padding-top: 40px;">
 
-    <div class="container">
-
-      <div class="navbar">
-        <div class="navbar-inner">
+    <!-- .navbar -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
           <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
           <ul class="nav">
             {% assign pages_list = site.pages %}
@@ -38,7 +38,11 @@
           </ul>
         </div>
       </div>
+    </div>
+    <!-- /.navbar -->
 
+    <!-- .container -->
+    <div class="container">
       <div class="content">
         {{ content }}
       </div>
