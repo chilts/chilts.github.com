@@ -1,6 +1,6 @@
 ---
 layout : page
-title  : Main Wiki Index
+title  : Wiki
 header : Wiki
 group  : navigation
 ---
@@ -9,6 +9,6 @@ This is just the things that I want to remember. If they become useful to you, t
 
 ## Quick Links to Useful Pages ##
 
-* "Bookmarks":bookmarks.html
+* [Bookmarks](bookmarks.html)
 
 (Ends)
