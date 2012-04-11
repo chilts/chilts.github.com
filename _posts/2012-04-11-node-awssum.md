@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introducing Node AwsSum
-tagline: ''''O''' is for AwsSum'
+tagline: O is for AwsSum
 published: true
 category: nodejs
 tags : [amazon, aws, nodejs, javascript, webapi]
