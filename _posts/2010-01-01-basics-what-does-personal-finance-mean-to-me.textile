@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Basics: What does Personal Finance Mean to Me?
+title: "Basics: What does Personal Finance Mean to Me?"
 published: true
 tags: [ living, planning ]
 category: retire-at-40
