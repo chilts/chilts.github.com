@@ -1,0 +1,39 @@
+---
+layout: post
+title: Cil with New Features
+published: true
+tags: [ cil, debian, planet-catalyst ]
+---
+<p>Already there is a lot of news on the 'cil' front just 24 hrs after releasing v0.2.</p>
+<pre>
+I've had a number of enquiries about \l{cil|/software/cil.html} consisting of emails asking for help, emails giving advice but even better fixes from both \l{Francois|http://feeding.cloud.geek.nz/} and \l{Sam|http://vilain.net/}. Thanks guys.</pre>
+<p>Francois has also already uploaded v0.2.1 to Debian Sid for inclusion in Lenny. Many thanks Francois, it's a pleasure being able to work with someone so passionate and involved in Free Software. We all have lots to learn from you.</p>
+<h2>Release v0.2.1</h2>
+<p>Anyway, I'd just like to say that v0.2.1 released earlier tonight had the dependency on Term::CallEditor removed to simplify a couple of things. Also, there really wasn't that much code in there anyway.</p>
+<h2>Working towards v3.0</h2>
+<p>If you get the HEAD of the <a href="http://git.kapiti.geek.nz/?p=cil.git;a=summary">cil git repo</a>, you'll already get some new funky features such as the following:</p>
+<pre> $ cil list --status=New
+ $ cil list --label=Release-v0.2
+ $ cil list --label=Type-Enhancement</pre>
+<p>These, of course, can be combined:</p>
+<pre> $ cil list --status=InProgress --label=Milestone-v0.3</pre>
+<p>and you can also use these same filters with the <code>summary</code> command.</p>
+<p>From issue #85eceee9, there are also plans to have something like the following too:</p>
+<pre> $ cil list --assigned-to=andychilton-at-gmail.com
+ $ cil list --has-attachments --has-comments
+ $ cil list --is-open
+ $ cil list --is-closed</pre>
+<p>(These last two will only happen when there is config to say which Statuses are Open/Closed.)</p>
+<p>I'm liking these filters already and with the new ones above it'll be great. Heck, I'm even thinking of cron'ing various filters so I know what I have to work on each day :-)</p>
+<h2>Other Issues</h2>
+<p>I have also added an issue, #98203ce8, which describes how to add proper searching to cil. This will supplement the above filters quite nicely.</p>
+<p>BTW: I have searched and searched and searched for a nice, small and instant indexing system within the Debian repos. I've tried a couple of things which didn't quite work how I wanted it, so if anyone has any ideas, I'd love to talk to you so get in touch.</p>
+<p>e.g something like this would be fantastic:</p>
+<pre> $ cil reindex
+ $ cil search 'Project Blah refactoring'
+ $ cil search 'screenshot table formatting'</pre>
+<p>Then we'd just list the issues found. It should be very simple with no setting up (except inside cil itself.) If git can 'init' and cil can 'init' then search should be able to set up real quick too.</p>
+<h2>And finally...</h2>
+<p>I'm already using cil to track itself and I'll be shortly adding it to most of my other little projects too. I'm already getting quite competent at getting at the issues, adding, editing them, making sure they're in the repo and all of that jazz. It's coming together quite nicely.
+</p>
+

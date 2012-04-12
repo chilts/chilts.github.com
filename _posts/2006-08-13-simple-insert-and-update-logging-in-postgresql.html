@@ -1,0 +1,42 @@
+---
+layout: post
+title: Simple Insert and Update Logging in PostgreSQL
+published: true
+tags: [ postgresql, trigger ]
+---
+<p>Being able to see at what time a row was inserted or updated in PostgreSQL is easy and can be put to good use.</p>
+<p>In <a href="http://kapiti.geek.nz/random/using-base-tables-in-postgres.html">Using Base Tables in Postgres</a> I showed how to create tables with <code>inserted</code> and <code>updated</code> times. Until now though, the <code>updated</code> column was exactly the same as <code>inserted</code>, but let's change that. Just to review our base table:</p>
+<pre> CREATE TABLE base (
+    inserted        TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated         TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+ );</pre>
+<p>Looking at this, both <code>inserted</code> and <code>updated</code> default to whatever the time is at insert. What we want though is to change the <code>updated</code> column whenever the row changes (ie. it is updated). To do this we need to set a trigger on the table which calls a function when each row is updated.</p>
+<p>Diving right in, here's the function we need:</p>
+<pre> CREATE FUNCTION updated() RETURNS trigger as '
+    BEGIN
+       NEW.updated := CURRENT_TIMESTAMP;
+       RETURN NEW;
+    END;
+ ' LANGUAGE plpgsql;</pre>
+<p>It's a fairly simple function and basically says to set the <code>updated</code> column of the NEW (or in this case, the updated) row, and return it ready to be put into the table. Further information says that the return type is <code>trigger</code> (makes sense) and it is written in the <code>PL/pgSQL</code> language.</p>
+<p>At the moment though, this function is standalone and isn't being called from anywhere. So let's create a simple table and set an updated trigger on it:</p>
+<pre> CREATE TABLE news (
+    id              SERIAL,
+    title           TEXT NOT NULL,
+    article         TEXT NOT NULL,
+    LIKE base INCLUDING DEFAULTS
+ );
+ 
+ CREATE TRIGGER news_updated BEFORE UPDATE ON news
+     FOR EACH ROW EXECUTE PROCEDURE updated();</pre>
+<p>We have told Postgres is to run this trigger for every single row that is ever updated in the news table. It runs just before the actual update therefore we can change the values of any fields in the NEW row inside the function which are then reflected in the table afterwards. In our case, the <code>updated</code> row will be changed to be the <code>CURRENT_TIMESTAMP</code>, which is what we wanted.</p>
+<p>Try inserting a few news articles and see that for every row you added, the <code>inserted</code> and the <code>updated</code> fields are exactly the same:</p>
+<pre> INSERT INTO news(title, article) VALUES('Aliens Invade!', '...stub...');
+ INSERT INTO news(title, article) VALUES('Earth Loses!', '...stub...');
+ SELECT title, inserted, updated FROM news;</pre>
+<p>Now update the second news item:</p>
+<pre> UPDATE news SET title = 'Earth Wins!' WHERE  title = 'Earth Loses!';
+ SELECT title, inserted, updated FROM news;</pre>
+<p>And we're done. This technique is certainly useful in some circumstances to help you track down what's going on in various parts of your database. Of course there are many more and comprehensive techniques for transaction logging but this is a simple one which might save your bacon one day.
+</p>
+

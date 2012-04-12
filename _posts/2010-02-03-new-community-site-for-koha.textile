@@ -1,0 +1,16 @@
+---
+layout: post
+title: New Community Site for Koha
+published: true
+tags: [ koha ]
+---
+I ended up missing most of the online Koha meeting this morning but I did see one of the resultant products from it.
+
+Within a few hours, a new website for "Koha":http://koha-community.org/ popped up and it already contains some great information, links and a blog too. It's awesome work in such a short amount of time.
+
+Jo has already blogged about how the "community rocks":http://library-matters.blogspot.com/2010/02/koha-community-rocks.html in words I couldn't put down, but suffice to say it's a good read.
+
+In other news, Galen has tagged "v3.02.00-alpha":http://git.koha.org/cgi-bin/gitweb.cgi?p=Koha;a=commit;h=d3ca0bd7f6d953e667d29327eb20ee5a7b7be130 in Git which is very exciting news for everyone within the Koha community.
+
+I know I'm not yet fully integrated into the Koha community yet but every so often I do a small thing to get closer and mainly for me to get my hands dirty. So to help, I'm doing the website for "KohaCon2010":http://kohacon.appspot.com/ which will happen later this year. It's done in Lollysite:http://gitorious.org/lollysite so hopefully that'll improve a little as other people have requirements of it too :)
+

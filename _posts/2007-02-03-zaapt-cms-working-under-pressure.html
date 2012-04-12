@@ -1,0 +1,15 @@
+---
+layout: post
+title: Zaapt CMS Working under Preassure
+published: true
+tags: [ zaapt, content ]
+---
+<p>There are two types of pressure: technical and environmental. Let's talk about  technical pressure to start off with.</p>
+<p>On the technical side, I had a bit of a personal challenge last night, but I managed to fix it up in what I thought was a nice way.</p>
+<p>As a bit of background information. Each content type contained in <a href="http://code.google.com/p/zaapt/">Zaapt</a> comes with a Perl Module for (database) abstraction and a load of Mason pages to render that content to the web page. So far, I have been dealing with the administration side of things (the <em>edit</em> pages) and the public side of things (the <em>view</em> pages). Most of the content types fall into this category: the news, blogs, content pages, FAQs, etc</p>
+<p>Last night I realised there was a third category. For the Forums, I had written the <em>view</em> and the <em>edit</em> pages. So far this has worked since the <em>view</em> pages were only seen by people once they had logged in, but we (<a href="http://kiwiwriters.org/">KiwiWriters</a>) also wanted the forums to be publically viewable too.</p>
+<p>Therefore, I had to think about what I could name the type of pages which can be read but not changed. This kinda threw me for a while but then realised that it was simply these pages which should be called the <em>view</em> pages.</p>
+<p>I set about renaming the current forum <em>view</em> pages to the new category I have called <em>user</em> pages. After a fair bit of renaming I then added the proper <em>view</em> pages. And guess what, it worked a treat :-)</p>
+<p>The best thing about it is that there is now a more formal idea about what types of pages there are. This will also come in handy in the future for things like Wikis and being able to post comments or trackbacks on blogs. It is these pages which blur the line between site content and user generated content as demonstrated yesterday with forums.
+</p>
+

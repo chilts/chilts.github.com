@@ -1,0 +1,29 @@
+---
+layout: post
+title: I Can't Believe I Didn't See this Before
+published: true
+tags: [ openid, google, planet-geek, planet-catalyst, facebook, social-graph ]
+---
+<p>Things are looking good in the 'open' social networking scene.</p>
+<p>For a while now, I've been interested in OpenID, open sharing of information and also the <a href="http://bradfitz.com/social-graph-problem/">social graph</a> everyone is talking about.</p>
+<p>Heck, I even told a (non-geek) friend of mine the other day that 'information wants to be free'. He was laughing at me - very hard (hi Dave).</p>
+<p>As it turns out, all the different thoughts and plans lots of people all over the globe have been having about how to open the social network out will all be pushed aside if <a href="http://www.techcrunch.com/2007/09/21/google-to-out-open-facebook-on-november-5/">this happens</a>.</p>
+<p>The interesting thing is though, even though it <em>might</em> turn out to be a big launch for Google, I think they've already started with the opening out of their <a href="http://googledataapis.blogspot.com/2007/09/calendar-mashups-anyone.html">GData JavasScript Client Library of Calendar</a>. And we're promised, more of their Application API's to come.</p>
+<p>The difference between this client library and the preceding ones is that it allows anyone to mashup an application of theirs to be writable <em>as well as</em> readable. What this means is anyone out there on the internet can now 'program' Google's Applications using a JavaScript library. The aim of GData in the first place was to standardised <em>their internal</em> applications this way so it's no surprise it's now writable.</p>
+<p>The main point about this <em>write</em> thing is that, to be able to write to something of yours (yes, you own it, it's <strong>your</strong> data), that means the application <em>has</em> to know who you are - which is authentication.</p>
+<p>So hang on let's recap:</p>
+<ul><li>random website (example.com) wants to create an application using your calendar and your friends as source data - let's say a birthday party invitation application</li><li>they mash something together on their own website (example.com/party-invitation.html)</li><li>you connect up, say you're andychilton_at_gmail.com and they ask Google to confirm this</li><li>you're confirmed and you also allow the Party Invitation site to access (some of) your personal data</li><li>you create a party, it gets added to your calendar and invites gets sent out to all your friends</li></ul>
+<p>Does it sound like Facebook to anyone?</p>
+<p>Yes, but there is one big difference. To create an application, you don't have to do it inside Google as you do with Facebook, you can just go ahead and do it.</p>
+<p>That sounds like progress to me :-)</p>
+<p>Two other things we need to consider are authentication and the personal data we're talking about.</p>
+<p>For authentication we already have OpenID which can say that you are the owner of this particular identity. So maybe November 5th is the big day for Google giving all of their accounts users an OpenID (yay!) Even though they don't need it and their APIs won't use it, it would be really nice of them to do it.</p>
+<p>So, the personal data that will be used in these PWMU's (Private Writable Mash-Ups) that might be used by an application may come from Google... BUT, and this is the best bit, I suspect that <em>anyone</em> in the world will also able to create an application which has a PWMU API which implements all the necessary features that the GData API does.</p>
+<p>So, finally, what does this actually mean.</p>
+<p>It means that <em>anyone</em> can provide an Authentication service, <em>anyone</em> can be a Data service and <em>anyone</em> can create a Personal Writable Mash-Up service.</p>
+<p>Sounds like decentralised control of everything - which is exactly what the proponents of the Open Social Graph problem want.</p>
+<p>The fact that OpenID creator <a href="http://brad.livejournal.com/">Brad Fitzpatrick</a> now works for Google and is leading this project gives me even more confidence that things will go in the right direction. As the techcrunch article above states, if Facebook is 98% open, then Google will be 100% open.</p>
+<p>And let me finish on a more personal note. I've been planning on adding OpenID to <a href="http://zaapt.org.nz/">Zaapt</a> and hence <a href="http://kiwiwriters.org/">KiwiWriters</a> in the next couple of months but let's just imagine some other possibilities. We could create an application which implements a <em>Work In Progress</em> API which allows you to read/write you WIP information from any mashup site. Let's say that in the future people decide to move away from KiwiWriters (let's hope not), then they can copy/move the data <em>that they own</em> to another site which implements the WIP API. This means that the user is <em>free to choose the best provider they see fit</em> AND they actually have the ability to do it. Talk about keeping providers on their toes :-)</p>
+<p>P.S. Most of the second half of this post is speculation about what will happen, but yeah, either way, it's going to be very interesting.
+</p>
+

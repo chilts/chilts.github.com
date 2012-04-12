@@ -1,0 +1,23 @@
+---
+layout: post
+title: cil v0.2.0 released
+published: true
+tags: [ cil, planet-catalyst, distributed-bug-tracking ]
+---
+<p>I'm happy to announce that cil v0.2.0 is now available for download.</p>
+<p>When I released v0.1.0 it was a test release for two reasons:</p>
+<ol><li>that people could try it</li><li>that I could figure out if the project was viable and that people would use it</li></ol>
+<p>While (1) didn't happen, (2) did. I got lots of feedback even though no-one was using it. I did tell people it wasn't quite where I wanted it to be but this release changes all that.</p>
+<p>Now it has all the makings of a tool which can just get better over time. Obviously it being v0.2, there are some things it is lacking but as it is, it's perfectly usable and nicely contained.</p>
+<p>Some new features of cil v0.2 (over v0.1):</p>
+<ul><li>save format of issues has been updated and is nicer and more flexible than before</li><li>extra commands to help with managing issues themselves</li><li>comments work and are more generic than before</li><li>attachments can now be added to issues</li></ul>
+<p>So far, most of the commands I added to <code>cil</code> were quite obvious but already there are some ideas for commands to allow you to work a lot faster. Such as:</p>
+<pre> $ cil status ISSUE Finished</pre>
+<p>Quite neat huh?</p>
+<p>See <a href="/software/cil.html">cil</a> for more information and also see this <a href="/software/cil-example.html">cil example</a> for more of an idea about what <code>cil</code> can do.</p>
+<p>Before I sign off I'd just like to point out one commit I did earlier today. My vision for cil is so that you can keep your bug tracking inside your repository. This means you can do things that weren't possible before. For example, closing the bug along with the commit(*).</p>
+<p>This <a href="http://git.kapiti.geek.nz/?p=cil.git;a=commitdiff;h=cc4ec49a40bdb7dbbd7d042b99fb7f7e0f4295fe">commit</a> for example shows you that along with the fix, the bug gained an additional comment and the issue was closed, all in the same transaction. That's pretty cool.</p>
+<p>So guys, go and have a play with this one. Thanks to <a href="http://nigel.mcnie.name/">Nigel</a>, <a href="http://feeding.cloud.geek.nz/">Francois</a> and <a href="http://dollyfish.net.nz/">Martyn</a> for allowing me to bounce ideas off you. And please, keep those ideas, suggestions, feedback and more importantly, patches, coming ;-)</p>
+<p>(*) Yes, I know you can link your version control with your bug tracking system - usually with sticky-tape and superglue - but when they're in the same place, it's much easier :-)
+</p>
+

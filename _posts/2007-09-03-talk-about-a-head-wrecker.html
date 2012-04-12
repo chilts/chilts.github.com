@@ -1,0 +1,21 @@
+---
+layout: post
+title: Talk About a Head Wrecker
+published: true
+tags: [ kiwi-writers, timezones ]
+---
+<p>So here's the deal ... and it's a head wrecker.</p>
+<pre>
+Over on \l{KiwiWriters|http://kiwiwriters.org/} we're releasing \b{Member Challenges} onto the site on the 15th September. So for example anyone who has signed up to the site can create a challenge that anyone else can join. It's going to be very cool.</pre>
+<p>There will also be other general improvements such as the one where we'll automatically track your daily progress for any of the challenges you're signed up for ... and this is where it starts to get complicated.</p>
+<p>I need to know:</p>
+<ul><li>when any timezone in the world passes midnight</li><li>the list of 'active today' challenges <em>at each timezone</em> that has just passed midnight</li><li>the progress of each member within that timezone partaking in any of the active challenges</li><li>then finally to save their progress</li></ul>
+<p>This is kinda weird in two respects.</p>
+<p>The first is that timezones are weird - we already know this, but I've just figured out something else a little strange. At 11pm tonight for example, the <strong>Pacific/Pago_Pago</strong> timezone just crossed into the 3rd September but the <strong>Pacific/Tongatapu</strong> timezone just crossed into the 4th September - at exactly the same time.</p>
+<p>So, the list of <em>active challenges</em> is any challenge that was open for even just 1 minute today. This is the 2nd strange thing and it isn't as easy as it sounds. The logic is a little weird. You'd think it would be about checking the start and end datetimes but you actually want to know if a particular challenge was open <em>at any stage</em> of today - and as you've seen above, today might mean yesterday, also remembering that you've already crossed over into tomorrow.</p>
+<p>Let's take midnight tonight for example. Once we cross midnight then the <code>CURRENT_DATE</code> is <code>2007-09-04</code>. This means that the list of <em>active challenges</em> for today (the 3rd) are those who's <code>start_date &lt;= '2007-09-03' AND end_date &gt;= '2007-09-02'</code>. It seems a little strange at first and it took me ages to figure it out. I don't consider it to be straightforward logic since there was a lot of thinking time but it definitely works.</p>
+<p>So as an example for my test data. For <code>Pacific/Pago_Pago</code> my test data said that there were two challenges active yesterday. But for <code>Pacific/Tongatapu</code> it said there were four because it was for today. Yet all of these are processed for different days at exactly the same time.</p>
+<p>As we speak, <code>Pacific/Chatham</code> has just passed midnight and is therefore offset by 45 mins from mainland New Zealand so again, something different the fact that I have to check every 15 mins!</p>
+<p>So tonight has been a bit of a head wrecker trying to get all these things in place. As it turns out, I think I've got it sussed but wow, it's amazing how much time can disappear on what appears to be a simple problem.
+</p>
+

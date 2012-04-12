@@ -1,0 +1,17 @@
+---
+layout: post
+title: "Just Stick it in the Same Column"
+published: true
+tags: [ database, planet-catalyst, doing-it-right ]
+---
+<p>There have been many times when I have heard someone say that phrase. &quot;Just stick it in the same column&quot;. Of course, they are referring to putting two different bits of information into the same column in a database.</p>
+<p>And for some funny reason, I don't know why, but people have a strange habit of wanting to put an 'x' and a 'y' value (or a height and width value) of an image into the same place.</p>
+<p>For example, if you want to display (76x89) somewhere and the input information you've received from the input source is '<code>76x89</code>', many people seem determined that you just whack that string into a column since the (current) output format is the same.</p>
+<p>Please.</p>
+<p>That's just laziness. But laziness in a bad way.</p>
+<p>Stop doing it and stop telling me that I have to do it too.</p>
+<p>Just do what's right from the start. Split it up in the separate bits of information (yes, surprisingly the width of an image is a different bit of data from the height) and store it separately too. You'll be thankful not only that your queries are nicer and faster but that the logic in both the frontend and backend is much easier. All because you decided to parse the input correctly in the first place.</p>
+<p>And if you don't believe me, <a href="http://arjen-lentz.livejournal.com/146427.html">then believe Arjen</a>.</p>
+<p>Enough said.
+</p>
+

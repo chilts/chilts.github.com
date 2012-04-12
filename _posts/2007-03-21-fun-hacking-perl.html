@@ -1,0 +1,20 @@
+---
+layout: post
+title: Fun Hacking Perl
+published: true
+tags: [ perl, hacking, dynamic-method ]
+---
+<p>I've known Perl a while - a long while. But still, there is more to learn!</p>
+<p>Tonight I have been hacking at dynamic method generation. I've never done it before so it has been like a voyage of discovery for me. Of course, I've used many modules which dynamically generate methods but I've never tried doing it myself.</p>
+<p>More times than I can count, I've used modules like <code>Class::Accessor</code> and various others. While I know I've browsed over them in Emacs every now and then, I have usually skimmed over the <em>dynamic</em> parts of it.</p>
+<p>So learning about it comes down to scratching an itch.</p>
+<p>With <a href="http://zaapt.org.nz/">Zaapt</a> I've been scratching a rather large itch recently so I thought why not go a bit further. Up until now, many of the methods in my database classes have done much the same things - the <em>insert</em> methods look similar, as do the <em>update</em> and <em>delete</em> methods. Mainly the <em>select</em> methods look dissimilar but sometimes they look the same.</p>
+<p>Tonight, I started hacking a rather large custom content type for <a href="http://kiwiwriters.org/">KiwiWriters</a>. I can't giveaway the details at the moment, but suffice to say I was getting bored writing all those methods all the time.</p>
+<p>So I searched and stumbled upon this article, <a href="http://www.guild.net/~schwern/papers/Why_I_Am_Not_A_Java_Programmer/why.html">Why I Am Not A Java Programmer</a>. As well as being an interesting read, it also has a small section on <em>Dynamic Method Generation</em>. It mentioned <code>Class::Accessor</code> so I took a look at it...</p>
+<p>...and It's not quite as scary as I thought it might be.</p>
+<p>After reading around and learning a bit more, I'm up to the stage in my own module whereby I've got my initial code for inserts written and ready to test. It doesn't complain with <code>perl -c</code> and I guess it should be okay.</p>
+<p>Unfortunately though, I feel fairly unwell at the moment and really will have to go to bed :-(</p>
+<p>Overall, it has been a very intriguing evening. I haven't written much of my content model, but I have been learning something new about Perl. That's the first time in a while I have taken that big a jump but damn-it, <em>I have tired</em> and need sleep.</p>
+<p>Part Two of this story will be posted tomorrow, when I find out if my code works the way I want it. I'll also post some examples too.
+</p>
+

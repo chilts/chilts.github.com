@@ -1,0 +1,17 @@
+---
+layout: post
+title: Zaapt and Project X Getting Very Very Exciting
+published: true
+tags: [ zaapt, project-x, cms ]
+---
+<p>Both are well underway. Zaapt is progressing and Project X is almost ready for launch.</p>
+<p>Over the past few weeks, I've spent a lot of time working on Zaapt and ProjectX. Zaapt is a CMS which provides content management for small to medium sized sites, but it doesn't force the site structure in which you have to work. The reason for this is explained in a previous article <a href="http://kapiti.geek.nz/random/zaapt-a-new-cms.html">Zaapt, a new CMS</a>.</p>
+<p>The best part about Zaapt CMS though is instead of developing it and then developing a site, I have had a fairly big site to develop alongside it - Project X. This means that straight away I can analyse the CMS skeleton I have put in place and verify that it actually works the way I want it too. I also have people playing with it too, which is great to track down bugs and get them fixed early (thanks guys).</p>
+<p>The current high level of achievement hit home to me a couple of days ago when I realised that my design was on the right track. Up until that point, I had been adding generic content types that almost any site can use (blogs, news, managed pages, forums, etc) but I then had to add a type which was specific to the site. For example, the Account information is generic across all sites - but this site required a Profile for each user.</p>
+<p>Now you might say profile is generic, but it's not. Yes, the idea of a Profile is generic, but the contents aren't. For example, if you've just joined a Photography site, you may want to say who your favourite photographers are. If you've joined a games site, they won't care about your favourite photographer, but will care about the game you've played the most.</p>
+<p>From a Perl point of view when I added the generic type, instead of using the Zaapt namespace, I used the ProjectX namespace. It inherited the various things from Zaapt it needed and the model worked fine. There is also generic database patch scripts which live in the project instead of Zaapt, and finally, the Mason pages live under the project's htdocs instead of Zaapt's Mason hierarchy.</p>
+<p>So there was three things it seemed I had designed correctly in the beginning with a view to generic and specific types and all of them worked out perfectly. It made me very happy.</p>
+<p>You'll be able to get a feel of how Zaapt is progressing soon when ProjectX is released. Then you'll also be able to see the fruits of labour from a great group of people.</p>
+<p>Unfortunately I can't link to it yet (which is okay) but will do really really soon :-)
+</p>
+

@@ -1,0 +1,23 @@
+---
+layout: post
+title: Introducing Project AwsSum
+published: true
+tags: [ project-awssum, planet-geek, planet-catalyst, amazon ]
+---
+<p>There's a lot of excitement happening in 'cloud' computing at the moment and I'm not surprised. People are finally realising the usefulness of fully distributed and tolerant systems.</p>
+<p>I have harped on about Amazon and their Web Services on a <a href="some-cool-stuff-coming-up.html">number</a> of <a href="amazon-web-services-with-mike-culver.html">occassions</a> (dating back to <a href="s3bak-out-now.html">October 2006</a>).</p>
+<p>Back when I first wrote <a href="http://code.google.com/p/s3bak/">s3bak</a> I downloaded and installed the example Perl code Amazon provided 'as is'. But that wasn't good enough, I wanted to know more about the protocol itself.</p>
+<p>Of course, there's no better way of learning something than actually doing it so I started implementing a library to talk to SimpleDB. Then I figured out that SQS and EC2 were pretty similar beasts and it just so happens that S3 could also be done in a similar way. </p>
+<p>After a few weeks of hacking, I now have a reasonably complete set of simple modules which can talk to all of SQS, EC2, S3 and SimpleDB. </p>
+<p><a href="http://github.com/andychilton/awssum/">Project AwsSum</a> comes with some straightforward command line scripts which allow you to execute commands against the services and see what's actually being queried under the hood.</p>
+<p>However, the most interesting thing I've been working on are the new types of programs I would never have written if these services didn't exist. </p>
+<p>As an example. I did 2 lightning Perl Mongers talks in March. The first was <a href="http://wellington.pm.org/archive/200803/andy_chilton_aws1/index.html">Talking to Amazon Web Services</a> and the second <a href="http://wellington.pm.org/archive/200803/andy_chilton_aws2/index.html">Playing with Amazon Web Services</a> (as always in lightning talks, they weren't long enough or in-depth enough). But I did write a program to demonstrate the power.</p>
+<p>Using both SQS and S3, I wrote 5 simple programs to interact using only the queue as the interface between them (and only 3 of these were necessary). It's a simple demonstration but it shows the power gained by writing loosly coupled code. Quickly running through them:</p>
+<ol><li><strong>put-image.pl</strong> - just uploads images to S3 and places the filename in the queue</li><li><strong>process-images.pl</strong> - polls the queue for messages and if it finds one, downloads the image and creates thumbnails of different sizes. It then re-uploads these new images into S3.</li><li><strong>generate-gallery.pl</strong> - generates and index HTML file using a list of what's in S3</li></ol>
+<p>(<strong>report-queue-progress.pl</strong> and <strong>report-bucket-contents.pl</strong> just report on the status of the queue and the files being stored.)</p>
+<p>So in about 350 lines of code (130 being the processor) I have a <a href="http://gallery.kapiti.geek.nz/index.html">simple gallery</a> which uses no webserver, is fully distributed, is resilient to hardware failures and was written in less than a couple of hours. It also comes with an <a href="http://www.amazon.com/gp/browse.html?node=379654011">Amazon SLA</a>  which is higher than you could do yourself. And did I tell you the price - all this for around 3 or 4 US cents per month. Not bad eh?</p>
+<p>If you want to have a play with <a href="http://github.com/andychilton/awssum/">Project AwsSum</a> you can <code>git clone</code> at <code>git://github.com/andychilton/awssum.git</code>. I'd love to hear feedback - and remember, it's a work in progress :-)</p>
+<p>P.S. I also have a tutorial giving examples of how to get started with EC2 using some of the newer features which have only just been released! Seeing as <a href="http://lisp.geek.nz/">Geoff</a> is giving a talk to us at Pizza Thursday tomorrow, I don't want to give the game away (just for you <a href="http://www.nothing.net.nz/">vex</a>).</p>
+<p><strong>Update</strong>: so Pizza Thursday is *NEXT* week - I got it wrong. I apologise. Pizza Rage ensues on #catalyst.
+</p>
+

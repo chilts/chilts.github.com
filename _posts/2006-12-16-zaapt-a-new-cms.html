@@ -1,0 +1,54 @@
+---
+layout: post
+title: Zaapt. a new CMS
+published: true
+tags: [ zaapt, cms ]
+---
+<p>Zaapt is a small and fast new CMS I am part way through writing.</p>
+<p>For a while now I have toyed with a few different CMS tools. To be honest,
+there are plenty more I haven't played with but of the ones I have, I haven't been very impressed.</p>
+<p>Now this post and my new design of a CMS don't have anything to do with the quality of those other CMS's. Quite the contrary and let's face it, the quality is very high. It has more to do with the perspective I am coming from in using and maintaining a CMS. For example, most CMS's are designed to be installed by users who want a website and who don't want to get their hands very dirty with the backend. What this also means is that configuration, design (both HTML and CSS) and plugins are all managed via the web interface.</p>
+<p>I don't like this approach.</p>
+<p>More importantly however, in a lot (a hell of a lot) of these cases, the people who are managing the CMS don't really know what they're doing. The reason they need this web interface to manage the CMS is because they don't have the expertise to get in via the backend. Unfortunately, this usually means they don't have the expertise for these front-end interfaces either.</p>
+<p>I, however, like to get my hands dirty. I certainly don't like web interfaces
+for this type of configuration - instead I prefer, like and enjoy the command
+line. I also like source control systems and scripts.</p>
+<p>Now I will describe a short lifecycle of using one of the current CMSs.</p>
+<p>Let say that a small company (an individual, a friend, a charity, a relation,
+or whatever) comes to you and asks you for a small website in which they can manage the content all by themselves - a CMS if you will. This approach would work well since they pay you once for installation, you leave them be and they can do the rest themselves! The story then goes that they also leave you alone and you can forget about the whole thing because it just works. It goes both ways.</p>
+<p>Except it doesn't quite work like that. Instead this is what really happens.</p>
+<p>You tell them that the install went well and they can now start adding content.</p>
+<ul><li>they add a page and edit it - good</li><li>then they add a news article and it appears fine - too cool</li><li>they feel great after adding a blog entry but are amazed once the first comment has arrived - fantastic</li></ul>
+<p>But then something happens and it's not so great.</p>
+<p>Within one day they've tried changing the layout of the front page, munging the CSS to make the site green instead of blue, installed a forum plugin which doesn't quite work how they want it to along with an FAQ plugin which doesn't work at all. Now it gives unknown errors in the browser window, the CMS's log and the page looks '<em>a bit funny</em>'. What they are left with is a broken installation, for which they have absolutely no idea how to fix it up and instead have to pay you to correct it for them.</p>
+<p>But you don't want to do it since you only ever wanted to install it and be
+done with it - you didn't even like it in the first place and now you like it
+even less.</p>
+<p>There goes that <em>it just works</em> approach.</p>
+<p>That was just a simple example. If the website originally requires an install
+which has new content types, different design, major template changes or pages with alternative layouts, then you're in even deeper.</p>
+<p>So alot of these CMS's are big and can do a lot out of the box. But they're
+also hairy. Big and hairy don't make nice, easy or beautiful in my book. It can make functional and working but for how long? This is especially true if you vary much from the standard install.</p>
+<p>Changing the layout HTML means anguish. Changing the main CSS means pain or starting afresh. Changing the odd page to be different means dead brain cells. Adding functionality means an excercise in self inflicted eye poking.</p>
+<p>Also, did I mention that you have to do all of this via a web interface.</p>
+<p>So what's the solution?</p>
+<p>Well, my approach to this problem is from a programmer perspective. Read on...</p>
+<p>If you have to hire a programmer to install, configure and/or fix a system for you, then why not make it as nice for the programmer to do these things pertinent to them as you are trying to make the interface nice for the content manager to manage the content.</p>
+<p>This means no fancy web interface for system configuration - the content
+manager knows nothing of the system. No fancy web interface for changing the layout HTML - what the hell are the content people changing the layout for anyway! No fancy web interface to change the CSS - again, they are content people, not designers. And no fancy web interface to install plugins - what the hell are they ... you get the picture.</p>
+<p>You do still have a fancy web interface for managing the content however. This makes sense :-) Adding a new news item, changing the content of a page, editing a blog entry, auditing of comments, addition of links and quotes or a new FAQ entry. These are all content management tasks and that, essentially, is what the website needs to provide and what the content managers need from the website.</p>
+<p>So this <em>Programmer perspective CMS</em>, what's in it for you as a programmer?</p>
+<p>You get lovely scripts to play with. You get package install scripts which are
+automatic. You get database patch scripts which just work. You do have to do some minor configuration but convention has given you almost everything you need already. And finally, you get some default HTML templates for the content itself but you get nothing (I repeat <strong>nothing</strong>) for the site itself. No layouts, no design and certainly no HTML. You also don't get any CSS. At all.</p>
+<p>And if you're expecting any more than this, then you're out of luck. You get a couple of examply sites to show what you can do and how you can do it, but that's it. Most of the time, the look and feel of each website is so different, that starting with a default look (added to the fact that it's so hard to change) means that they all end up looking the same - which is no use
+really. By not giving you anything at all, but instead giving you the power to
+do anything you want, then you can let you mind free.</p>
+<p>You do have to do some other work to setup the webserver and suchlike but it isn't any more work than other CMSs out there.</p>
+<p>You have full control over everything and in a way that is easier and more
+straightforward to you as a programmer. The reason why you understand it better is because you understand how it fits together at the back-end, instead of the more usual black box that you have to control via the web front end. You can also configure it faster since you are within the realm you understand. Not that you'd have to do much configuration anyway. It's a far cry from some slow-ass GUI in which ... [example snipped since it ranted on for too long].</p>
+<p>So that's about it. I know I haven't talked technical, but then that's not what
+a CMS is about. Implementation details can come later.</p>
+<p>To summarise, it will be a CMS for programmers which is content managed by users, rather than a CMS for users which is hated by programmers.</p>
+<p>At least, that's what I'm aiming for. Wish me luck :-)
+</p>
+

@@ -1,0 +1,17 @@
+---
+layout: post
+title: What Programs Are
+published: true
+tags: [ programming, code, nodejs ]
+---
+I'm on a lot of mailing lists, some of which I read religiously, others I dip into when the need arises and others still I just read the topics that look interesting. The "NodeJS":http://groups.google.com/group/nodejs is one such list in that I just read the thread whose subjects stand out to me.
+
+And luckily for me I clicked a fairly mundane thread this morning but then read what I thought was a "fantastic description of programs":http://groups.google.com/group/nodejs/msg/16b93876a125192e and therefore the kind of emotions you get when programming. Written by "Isaac Schlueter":http://blog.izs.me/ and reproduced here:
+
+* Some programs are community centers, and you want to entice people to come inside. 
+* Some programs are factories, and you want to make sure the workers don't hurt themselves. 
+* Some programs are shops, and you want people to visit, but only a few go in the back. 
+* And then some programs are art, and while you might hope that some people find them beautiful or perhaps even useful, and contributions may be accepted and feedback always welcome, the real purpose is just to hang it in your house and let it bring you joy.
+
+I like it. Thanks Isaac.
+

@@ -1,0 +1,12 @@
+---
+layout: post
+title: 32 Commits Today
+published: true
+tags: [ hacking ]
+---
+Yes, I know "commits" are about as informative as "Lines of Code" but it does sometimes help you see where you are in comparison to other days.
+
+Thanks to the terrible Wellington weather I stayed home all day and hacked. It was awesome. It turns out I did 32 commits today to my current project. Correction, I have two projects on the go (one at home and one at the office). This is for the one I'm doing at home. After all that I am (1) tired, (2) chuffed I was so productive and (3) happy!
+
+The most interesting of these of course is (2). I have found that since I quit my job and am doing my own thing, I am almost infinitely more productive. Firstly, I know the ins and outs of the system, secondly I have no interruptions (irc, email, phone, in-person, clients) and finally, all my projects are just so much more interesting than previous things I've worked on. And yep, that includes a satellite control system! :)
+

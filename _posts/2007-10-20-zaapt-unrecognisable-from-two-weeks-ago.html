@@ -1,0 +1,38 @@
+---
+layout: post
+title: Zaapt is Unrecognisable from Two Weeks Ago
+published: true
+tags: [ apache, zaapt, debian, planet-geek ]
+---
+<p>For a while I've wanted to refactor a lot of stuff in Zaapt and I finally got my chance to do it and much more.</p>
+<p>I've been meaning to tidy up a few things in <a href="http://zaapt.org.nz/">Zaapt</a> for a while and over the past two weeks I've <a href="http://groups.google.com/group/zaapt-commit/">hacked on it lots and lots</a>.</p>
+<p>In short point form, the changes I have made are:</p>
+<ul><li>updated the sessions to be Apache 2 compatible</li><li>tidied up all the DB access modules</li><li>re-worked a number of components into processing/rendering pairs</li><li>added proper RBAC to Zaapt</li></ul>
+<p>As always, a small list doesn't do justice to the amount of work I have actually put in. Add to this that fact that I've been hacking on it constantly since the end of June and you can see where Zaapt has gone in the meantime.</p>
+<p>In fact, Zaapt is still only 10 months old so it really has come a long way from being nothing beforehand.</p>
+<p>Here, I'm just going to touch on a few different things related to recent happenings in the Zaapt world.</p>
+<h2>More Interest</h2>
+<p>There is more interest from other people around Zaapt these days but still no hard-and-fast site to say <em>&quot;hey looky over there, there's a Zaapt site and you know what and I didn't make it&quot;</em>. I can't wait for that day to come and I promise you, it'll come before Zaapt is 1 year old.</p>
+<p>Or at least, I hope it will.</p>
+<h2>From Apache Perl to Apache 2</h2>
+<p>This is something I had to do which just made sense. Apache Perl is looking a bit long in the tooth and of course, it's going to be removed from Debian in Lenny so I had to move away sometime.</p>
+<p>As it turns out, porting Zaapt over to Apache 2 wasn't that hard, just a little picky. I had to change a few little things here and there once I'd Googled for the information I needed but mostly it was harmless.</p>
+<h2>From Sarge to Etch</h2>
+<p>Most of my sites are still running on this <a href="http://www.debian.org/releases/sarge/">Debian Sarge</a> box but I now have one running on <a href="http://www.debian.org/releases/etch/">Debian Etch</a>.
+In the next week or so, I'm going to start porting all the sites over to the new box from the smallest to the largest. Firstly, Zaapt itself and <a href="http://simple.zaapt.org.nz/">Zaapt Simple</a>, then <a href="http://kapiti.geek.nz/">kapiti.geek.nz</a>  and finally <a href="http://kiwiwriters.org/">KiwiWriters</a>. As they say, <em>&quot;it's quicker to build a 5&quot; telescope and a 9&quot; telescope than it is to build a 9&quot; telescope&quot;</em>.</p>
+<h2>From weirdness to Roles and Permissions</h2>
+<p>After I showed <a href="http://gamma.net.nz/">Donovan</a> how my old privileges worked, I knew it was confusing by the look on his face.
+The good news is however that Zaapt now has a good implementation of <a href="http://csrc.nist.gov/rbac/">Role-Based Access Control</a> and it's much the better for it. Currently it does the simplest level but it's easy to add some of the more advanced levels later even though I think that will be unnecessary.</p>
+<p>Adding RBAC has been the hardest change I've had to do to Zaapt so far. Not because it was tough, just because RBAC is implicit in a CMS like Zaapt and used in a lot of places. I had to change a lot of the Mason processing components as well as the database schema.</p>
+<p>This addition to Zaapt had to happen now because otherwise it would become even harder later on when more sites, more users and more content models are using it.</p>
+<p>Finally, because I'm changing servers, it gives me a prime opportunity to test it all works when I migrate the databases across but before I switch the DNS.</p>
+<h2>From Development to v0.1</h2>
+<p>Zaapt is still young but it is almost ready for the first official release. I know about the adage <em>&quot;release early, release often&quot;</em> but I just never felt that Zaapt was in that release position yet. Still you'll note that I'm only going to release as <strong>v0.1</strong> but that's just because I know there are many more things to do before I get to a <strong>v1.0</strong> state.</p>
+<p>I will however now adhere to that phrase, moreso in the <em>&quot;release often&quot;</em> thing. That way, to upgrade from one version to the next would be relatively easy and certainly less of a headstrain.</p>
+<h2>And finally... a New Site</h2>
+<p>I wanted to get a simple-ish site going on Debian Etch, Apache 2 and all the new refactored stuff so I created <a href="http://amazingstructures.org/">Amazing Structures</a> just as a hobby site. So far it just maps a few structures within a few categories but this is going to be expanded over time with many more features planned along the way.</p>
+<p>As it turns out, its use of in-built Zaapt content models is straightfoward, but the site also has a very complex <em>custom content model</em> of it's own.</p>
+<p>This is another great example of a custom content model which extends Zaapt without any trouble whatsoever. An even better example of a custom content model is the Challenge model (using <a href="http://kiwiwriters.org/my/challenge/site/socnoc-2007.html">SoCNoC</a> as an example) over on KiwiWriters.</p>
+<p>That's it for now, but remember to lookout for a v0.1 of Zaapt in the next few weeks (and as a bonus, with a new <strong>Event</strong> content model too).
+</p>
+
