@@ -5,7 +5,7 @@ header : All Posts
 ---
 <ul class="posts">
 {% for post in site.posts %}
-  {% if post.category != 'retire-at-40' %}
+  {% if post.category == 'blog' %}
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endif %}
 {% endfor %}

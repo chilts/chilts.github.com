@@ -15,8 +15,8 @@ title : Atom Feed
    <email>{{ site.author.email }}</email>
  </author>
 
-{% for post in site.posts %}
-  {% if post.category != 'retire-at-40' %}
+{% for post in site.posts limit:30 %}
+  {% if post.category == 'blog' %}
  <entry>
    <title>{{ post.title }}</title>
    <link href="{{ site.production_url }}{{ post.url }}"/>

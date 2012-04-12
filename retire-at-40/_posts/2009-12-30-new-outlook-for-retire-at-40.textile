@@ -1,0 +1,26 @@
+---
+layout: post
+title: New Outlook for 'Retire at 40'
+published: true
+tags: [  ]
+category: retire-at-40\n---
+Over the past year, many things have changed. I have grown up a little and maybe matured a little too. I have also been pretty busy with lots of other things. One of which was work. This wasn't good.
+
+I've also had a rethink about this here blog. I think having it's own domain name (www.retire-at-40.com) was good but I think I need to start putting all of these things in the same place. I've always had lots of interests and that site ended up being in the peripheral vision.
+
+Instead, I'm bringing it in to my personal site, one where _all_ of my interests are catered for. I like writing (as you can tell) and having sections for my other interests just make it a whole lot easier. Easier to manage, quicker to post and more likely I'll keep it going.
+
+!2 chilts.org
+
+The new chilts.org is hosted on "Google AppEngine":http://appengine.google.com/ which is awesome since it's free! And you know what free means when you're trying to retire at 40 :)
+
+It also means I can flex my own programming talents and finally write the site/blog software I've always wanted. I don't need the complexity and clutterness of "WordPress":http://wordpress.org/ or any other blogging system. I don't need plugins to help me do things since I just want the basics. I actually want slightly different requirements too, and "Lollysite":/project/lollysite/ (the software I wrote for AppEngine) now does 98% of what I actually need.
+
+!2 Letting Go
+
+Finally, I have decided to rethink the best way to present *Retire at 40*. On the old site, I was too caught up in statistics, subscribing people, advertising, commenting on other sites and everything that goes with it. It was a right pain.
+
+Instead, I'm just going to let all that go. I'm going to write for the enjoyment of it. Maybe, yes, I want this blog to make money in the future but for now I'm just going to let it grow naturally.
+
+Now, I'm just going to concentrate on writing good articles for my audience. Which is the right way forward.
+
