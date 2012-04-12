@@ -1,4 +1,5 @@
 ---
+category: blog
 layout: post
 title: Why Google Wave was a Failure
 published: true

@@ -1,4 +1,5 @@
 ---
+category: blog
 layout: post
 title: Things to Remember about Amazon EC2
 published: true
