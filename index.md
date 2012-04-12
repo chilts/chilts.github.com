@@ -2,17 +2,11 @@
 layout: page
 title: Hello, World!
 ---
-## ToDo ##
+You've probably come here for:
 
-See my [blog](/blog/) for now. :)
+* My [blog](/blog/)
+* or [Retire at 40](/retire-at-40/)
 
-## All Posts ##
-
-<ul class="posts">
-{% for post in site.posts %}
-    <li>{{ post.category }}</li>
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
+... or some other things.
 
 (Ends)
