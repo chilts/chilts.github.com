@@ -15,7 +15,7 @@ author :
 
 # general site/blog stuff
 url : http://chilts.org
-permalink: /:category/:title.html
+permalink: /:categories/:title.html
 paginator: false
 
 # topnav
