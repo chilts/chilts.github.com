@@ -4,7 +4,7 @@ title: Things to Remember about Amazon EC2
 published: true
 tags: [ ec2, aws ]
 ---
-I've been knocking around with Amazon EC2 again over the past few months and am learning a few tricks which I need to write down so I don't forget them. Using my [AwsSum](https://github.com/andychilton/awssum) library, here's a few bits and pieces:
+I've been knocking around with Amazon EC2 again over the past few months and am learning a few tricks which I need to write down so I don't forget them. Using my [AwsSum](https://github.com/appsattic/awssum) library, here's a few bits and pieces:
 
 Starting a new server (Ubuntu Lucid AMD64 in region 'us-east', availability zone 'us-east-1a'):
 

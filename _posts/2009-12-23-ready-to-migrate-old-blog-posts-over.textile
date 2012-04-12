@@ -8,14 +8,14 @@ A recent "commit on Lollysite":http://gitorious.org/lollysite/lollysite/commit/a
 
 This includes my old entries from:
 
-* "kapiti.geek.nz":http://kapiti.geek.nz/random/
-* "Retire at 40":http://www.retire-at-40.com/blog/
-* "pie.geek.nz":http://pie.geek.nz/blog/
+* *http://kapiti.geek.nz/random/ (deprecated) kapiti.geek.nz*
+* *http://www.retire-at-40.com/blog/ (deprecated) Retire at 40*
+* *http://pie.geek.nz/blog/ (deprecated) pie.geek.nz*
 * some posts and articles from a couple of other sites too
 
 I hope that once the migrations are done, and I redirect the traffic from those sites here, I'll be more consistently posting. Also, I'm reaching the stage where I'm understanding AppEngine a little more and actually have less things to do for "Lollysite":/project/lollysite/ now.
 
-BTW, I'm now also writing my blog entries in "Textile":http://www.textism.com/tools/textile/ instead of my proprietary (but open source) wiki markup "Phliky":http://github.com/andychilton/phliky
+BTW, I'm now also writing my blog entries in "Textile":http://www.textism.com/tools/textile/ instead of my proprietary (but open source) wiki markup "Phliky":http://github.com/chilts/phliky
 
 It's very nice. Finally, I find a wiki-type markup language I like.
 

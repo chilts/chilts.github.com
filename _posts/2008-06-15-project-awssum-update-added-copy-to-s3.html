@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Project AwsSum Update: Added 'Copy' to S3
+title: "Project AwsSum Update: Added 'Copy' to S3"
 published: true
 tags: [ project-awssum, planet-geek, planet-catalyst, s3, aws ]
 ---
 <p>Amazon added the ability to 'copy' a key within or between S3 buckets.</p>
 <p>This functionality can also be used to change the metadata of an object too.</p>
-<p>For example, using the thin-layer commands in <a href="http://github.com/andychilton/awssum">Project AwsSum</a>, you can do things like:</p>
+<p>For example, using the thin-layer commands in <a href="http://github.com/appsattic/awssum">Project AwsSum</a>, you can do things like:</p>
 <pre> $ s3-rad -b mybucket -k NewKey.jpg -K FromKey.jpg</pre>
 <p>As I said, you can also copy between buckets (so long as they are in the same location, either the States or Europe currently):</p>
 <pre> $ s3-rad -b mybucket -B frombucket -k key.jpg</pre>
