@@ -6,7 +6,7 @@ title : Atom Feed
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>{{ site.title }}</title>
- <link href="{{ site.production_url }}/blog/atom.xml" rel="self"/>
+ <link href="{{ site.production_url }}/retire-at-40/atom.xml" rel="self"/>
  <link href="{{ site.production_url }}"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>{{ site.production_url }}</id>
@@ -16,7 +16,7 @@ title : Atom Feed
  </author>
 
 {% for post in site.posts %}
-  {% if post.category != 'retire-at-40' %}
+  {% if post.category == 'retire-at-40' %}
  <entry>
    <title>{{ post.title }}</title>
    <link href="{{ site.production_url }}{{ post.url }}"/>
