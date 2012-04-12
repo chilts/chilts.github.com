@@ -5,7 +5,7 @@ published: true
 tags: [ postgresql, trigger ]
 ---
 <p>Being able to see at what time a row was inserted or updated in PostgreSQL is easy and can be put to good use.</p>
-<p>In <a href="http://kapiti.geek.nz/random/using-base-tables-in-postgres.html">Using Base Tables in Postgres</a> I showed how to create tables with <code>inserted</code> and <code>updated</code> times. Until now though, the <code>updated</code> column was exactly the same as <code>inserted</code>, but let's change that. Just to review our base table:</p>
+<p>In <a href="using-base-tables-in-postgres.html">Using Base Tables in Postgres</a> I showed how to create tables with <code>inserted</code> and <code>updated</code> times. Until now though, the <code>updated</code> column was exactly the same as <code>inserted</code>, but let's change that. Just to review our base table:</p>
 <pre> CREATE TABLE base (
     inserted        TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated         TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
