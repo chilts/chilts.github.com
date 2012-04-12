@@ -1,0 +1,139 @@
+---
+category: blog
+layout: post
+title: Timezones Freak Me Out
+published: true
+tags: [ postgresql, planet-geek, timezones ]
+---
+<p>I've been playing with Timezones inside PostgreSQL for the last wee while, experimenting and trying to figure some things out.</p>
+<p>The first thing I figured was that I couldn't use NZT, NZST or NZDT or any of the other acronyms (CEST, UTC, GMT, CET, CST, PST etc) for timezones since they are always calculated as offset from UTC.</p>
+<p>Instead I realised that I would have to use something along the lines of <em>America/New_York</em>, <em>Europe/Helsinki</em> and <em>Pacific/Auckland</em>. This way any Daylight Savings Time will be automatically incorporated in any time calculations I have to do.</p>
+<p>This is where the problems with Postgres started.</p>
+<p>Using Postgres, you can ask for a date at a particular time zone, such as:</p>
+<pre> db=&gt; SELECT CURRENT_TIMESTAMP AT TIME ZONE 'NZST';
+           timezone          
+ ----------------------------
+  2007-07-12 23:01:37.020998
+ (1 row)</pre>
+<p>We knew that would work even if it isn't what I actually want. I also played with setting the time zone in the database session:</p>
+<pre> db=&gt; SET TIME ZONE 'NZST';
+ ERROR:  unrecognized time zone name: &quot;NZST&quot;</pre>
+<p>That's a little strange! Why can I specify it as a time zone in a query but not as a default. Alright then, I'll try something else, something more akin to what I want anyway:</p>
+<pre> kiwiwriters=&gt; SET TIME ZONE 'Pacific/Auckland';
+ SET</pre>
+<p>Aha, that's more like it. It recognises exactly what I want it to be. I didn't actually want to do this since I thought it would be better in the query. Okay, let's try it in the query:</p>
+<pre> db=&gt; SELECT CURRENT_TIMESTAMP AT TIME ZONE 'Pacific/Auckland';
+ ERROR:  time zone &quot;pacific/auckland&quot; not recognized</pre>
+<p>WTF?</p>
+<p>In the query you have to specify the time zone as an accronym (which may be wrong for 6 months of the year) and trying to set the default you can only use the location style. The other two combinations don't work which I find strange.</p>
+<p>In which case, I still need to do something magical to get it all working. Today when I was thinking about it, it clicked that I could get around this, but before that, let me tell you the two things I need to do with these time zones.</p>
+<p>Firstly, I need to know if a local time in a particular time zone has passed. For example, I want to know if <em>2007-07-12 11:59:59</em> has passed for me in <em>Pacific/Auckland</em> and also at a later stage, that same local time has passed in <em>America/New_York</em>. Quick test:</p>
+<pre> db=&gt; SET TIME ZONE 'Pacific/Auckland';
+ SET
+ db=&gt; SELECT CASE WHEN CURRENT_TIMESTAMP &gt; '2007-07-12 23:00:00' THEN 'Passed' else 'Not' END;
+   case  
+ --------
+  Passed
+ (1 row)
+ 
+ db=&gt; SET TIME ZONE 'America/New_York';
+ SET
+ db=&gt; SELECT CASE WHEN CURRENT_TIMESTAMP &gt; '2007-07-12 23:00:00' THEN 'Passed' else 'Not' END;
+  case 
+ ------
+  Not
+ (1 row)</pre>
+<p>Well, that looks good. I knew I couldn't ask for the timestamp using a location time zone so I have to set the default time zone first. So far this seems to work.</p>
+<p>Secondly, I have to figure out when a particular time zone has just passed midnight. This way, I can do some processing just after midnight for each time zone and have it save off some data. For this, I need a big list of time zones. Luckily for me I found that the <code>/usr/share/zoneinfo/zone.tab</code> file in Debian stores all the info I need and more. Wikipedia also has a <a href="http://en.wikipedia.org/wiki/List_of_tz_zones_by_country">list of time zones by country</a>. I shall use the former since it is already machine readable and I need to insert all the time zones with their textual info in the database.</p>
+<p>As it turns out, there are 394 different time zones which I bet you didn't guess (although maybe some of these are the same, just named differently). Here's a bit of analysis on each time zone.</p>
+<p>I wrote a little script to loop through all the time zones, set it and retrieve the <code>CURRENT_TIMESTAMP</code>. I ended up with a big list like this (alphabetical order):</p>
+<pre> 2007-07-12 11:17:03.967815+00 - Africa/Abidjan
+ 2007-07-12 11:17:03.967815+00 - Africa/Accra
+ 2007-07-12 14:17:03.967815+03 - Africa/Addis_Ababa
+ ...
+ 2007-07-12 21:17:03.967815+10 - Pacific/Truk
+ 2007-07-12 23:17:03.967815+12 - Pacific/Wake
+ 2007-07-12 23:17:03.967815+12 - Pacific/Wallis</pre>
+<p>Not very useful but interesting nonetheless so I decided to also show them in time order instead. As it turns out, many of the almost 400 time zones are currently the same time (obviously). I was expecting a few more than just 24 since I knew some time zones were on the half hour and others were at UTC+13 or so. I was a little surprised however to see that there were currently 39 different time zones in play. So how many of each (for NZST 2007-07-12 23:23:12.967336+12):</p>
+<pre>  4 - 2007-07-12 00:23:12.967336-11
+  5 - 2007-07-12 01:23:12.967336-10
+  1 - 2007-07-12 01:53:12.967336-09:30
+  2 - 2007-07-12 02:23:12.967336-09
+  5 - 2007-07-12 03:23:12.967336-08
+  8 - 2007-07-12 04:23:12.967336-07
+ 18 - 2007-07-12 05:23:12.967336-06
+ 24 - 2007-07-12 06:23:12.967336-05
+ 48 - 2007-07-12 07:23:12.967336-04
+ 27 - 2007-07-12 08:23:12.967336-03
+  1 - 2007-07-12 08:53:12.967336-02:30
+  4 - 2007-07-12 09:23:12.967336-02
+  1 - 2007-07-12 10:23:12.967336-01
+ 20 - 2007-07-12 11:23:12.967336+00
+ 22 - 2007-07-12 12:23:12.967336+01
+ 46 - 2007-07-12 13:23:12.967336+02
+ 40 - 2007-07-12 14:23:12.967336+03
+  1 - 2007-07-12 14:53:12.967336+03:30
+  9 - 2007-07-12 15:23:12.967336+04
+  1 - 2007-07-12 15:53:12.967336+04:30
+ 13 - 2007-07-12 16:23:12.967336+05
+  2 - 2007-07-12 16:53:12.967336+05:30
+  1 - 2007-07-12 17:08:12.967336+05:45
+  9 - 2007-07-12 17:23:12.967336+06
+  2 - 2007-07-12 17:53:12.967336+06:30
+ 10 - 2007-07-12 18:23:12.967336+07
+ 18 - 2007-07-12 19:23:12.967336+08
+  1 - 2007-07-12 20:08:12.967336+08:45
+  8 - 2007-07-12 20:23:12.967336+09
+  3 - 2007-07-12 20:53:12.967336+09:30
+ 13 - 2007-07-12 21:23:12.967336+10
+  1 - 2007-07-12 21:53:12.967336+10:30
+  7 - 2007-07-12 22:23:12.967336+11
+  1 - 2007-07-12 22:53:12.967336+11:30
+ 12 - 2007-07-12 23:23:12.967336+12
+  1 - 2007-07-13 00:08:12.967336+12:45
+  4 - 2007-07-13 00:23:12.967336+13
+  1 - 2007-07-13 01:23:12.967336+14</pre>
+<p>So, as an example, there are currently 48 time zones which are UTC-4 and just one at UTC+14.</p>
+<p>This proves that I can get the current time at each time zone so that's great. The second thing to work out is when one of those reached midnight.</p>
+<p>At first, I was going to set up a cron job for every half hour but obviously from this data I'll need to do it every 15 minutes. Calculating when a timezone passes midnight can be done with a few neat tricks PostgreSQL provides. You can extract various aspects of the timestamp such as the hour and minute - you see where I'm going here. In the end, after setting the default timezone to the one I wanted to test, I came up with a quick test to give me a straight 0 or 1. If 1, then do my processing for that time zone, if 0, leave it be for the moment.</p>
+<pre> SELECT
+    CASE WHEN
+        EXTRACT(HOUR FROM CURRENT_TIMESTAMP) = 0
+    AND
+        EXTRACT(MINUTE FROM CURRENT_TIMESTAMP) &gt;= 0
+    AND
+        EXTRACT(MINUTE FROM CURRENT_TIMESTAMP) &lt; 15
+    THEN
+        1
+    ELSE
+        0
+    END AS yes</pre>
+<p>It's a little warped (any better suggestions welcome) but I reckon it'll do the job. In fact, here's another way I just thought of:</p>
+<pre> SELECT
+    CASE WHEN
+        CURRENT_TIMESTAMP &gt;= CURRENT_DATE::TIMESTAMP
+    AND
+        CURRENT_TIMESTAMP &lt; CURRENT_DATE + '15 mins'::INTERVAL
+    THEN
+        1
+    ELSE
+        0
+    END AS yes</pre>
+<p>If I cron for 0, 15, 30 and 45 mins then I'll pretty much know immediately which time zones have just passed midnight and therefore which ones to process.</p>
+<p>It's taken me so long to write this entry, that it's now just gone passed midnight. So, at the moment, the following time zones are considered ripe for processing (both above queries gave the same results), including <em>Pacific/Auckland</em> which is mine:</p>
+<pre> Antarctica/McMurdo
+ Antarctica/South_Pole
+ Asia/Magadan
+ Pacific/Auckland
+ Pacific/Fiji
+ Pacific/Funafuti
+ Pacific/Kwajalein
+ Pacific/Majuro
+ Pacific/Nauru
+ Pacific/Tarawa
+ Pacific/Wake
+ Pacific/Wallis</pre>
+<p>All in all, I've been battling this for a while and now I think I've got it sussed. I haven't actually done the web page (which checks if a time has passed) or the cron (which checks each midnight) but I'm pretty sure it'll be alright now. I have done the database patch though that is by far the easiest part of the whole thing. It's been an altogether complete pain so maybe you'll find something useful in this lot if you have problems yourself.</p>
+<p>Oh, and yes, all of this would have be really easy if I'd just stuck with using offsets from UTC (incorrectly), but yeah, you didn't expect that fudge from me did you?
+</p>
+

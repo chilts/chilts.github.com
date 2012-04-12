@@ -1,0 +1,17 @@
+---
+category: blog
+layout: post
+title: Zaapt now has Menus
+published: true
+tags: [ zaapt, content-type, kiwi-writers ]
+---
+<p>You'd think that menus would be easy. After a good 5 or 6 hours, I've polished them off.</p>
+<p>It's funny because some of the things you'd think would be easy take a little longer than you'd expect. Menus for instance.</p>
+<p>The one thing menus have is order. Content managed pages don't have order since they're like a hash (yes, this is Perl). News and blogs have an order but that is implicit because of the <code>current_timestamp</code>. Menus have both an implicit order (the order they were put in) and an explicit order (the order the user has re-arranged the items to).</p>
+<p>Anyway, in doing the algorithm to figure out which two <code>display</code> fields I had to swap round was a bit of hassle but I got there in the end. Then again, I was (am?) tired, so that didn't help. Moving on...</p>
+<p>The menu is a simple list with each item having an integer <code>level</code>. This means I don't have to deal with hierarchical data - in a relational database - so that makes it a little easier. It also means it's really easy to figure out what you want your HTML to do at each level.</p>
+<p>As an example, over at <a href="http://kiwiwriters.org">KiwiWriters</a>, we only have a 2 level menu. If the <code>level</code> is one, then it is a top-level menu. My implementation writes out each <code>&lt;div&gt;</code> and only puts an extra class on it (to indent it) if the <code>level &gt; 1</code>. As an added trick, if the <code>level == 0</code>, it isn't shown! Nice to hide those <em>Coming Soon</em> pages :-)</p>
+<p>Even though the above workings of the menu are simple, it can pretty much accommodate a number of menu systems I have come across in the past. Also, the way <a href="http://code.google.com/p/zaapt/">Zaapt</a> is designed, means that if someone wants to come along and create <code>AnotherMenu</code>, a <code>HierarchicalMenu</code> or even a <code>SuperWhizzBangMenuWhichGlowsInTheDarkMenu</code>, then that's perfectly fine with me.</p>
+<p>Implementations at the ready...!
+</p>
+

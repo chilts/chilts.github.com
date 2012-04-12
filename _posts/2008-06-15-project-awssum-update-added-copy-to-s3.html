@@ -1,0 +1,23 @@
+---
+category: blog
+layout: post
+title: "Project AwsSum Update: Added 'Copy' to S3"
+published: true
+tags: [ project-awssum, planet-geek, planet-catalyst, s3, aws ]
+---
+<p>Amazon added the ability to 'copy' a key within or between S3 buckets.</p>
+<p>This functionality can also be used to change the metadata of an object too.</p>
+<p>For example, using the thin-layer commands in <a href="http://github.com/appsattic/awssum">Project AwsSum</a>, you can do things like:</p>
+<pre> $ s3-rad -b mybucket -k NewKey.jpg -K FromKey.jpg</pre>
+<p>As I said, you can also copy between buckets (so long as they are in the same location, either the States or Europe currently):</p>
+<pre> $ s3-rad -b mybucket -B frombucket -k key.jpg</pre>
+<p>As you can see, you have to specify a destination bucket and key but you may leave off the source bucket and/or key. While the Amazon API requires everything, my S3 library fills in the blanks.</p>
+<p>If you try to copy a key onto itself hwoever, you'll get an error back from Amazon:</p>
+<pre> $ s3-rad copy -b mybucket -k image.jpg
+ InvalidRequest: The Source and Destination may not be the same when the MetadataDirective is Copy.</pre>
+<p>but you are allowed to do this if all you want to do is change the metadata, in this case, the <code>Content-Type</code>:</p>
+<pre> $ s3-rad copy -b mybucket -k image.jpg -m REPLACE -c 'image/jpg</pre>
+<p>Whilst the CopyObject operation in S3 is still beta, there has been much discussion about it on the AWS forums and I suspect the API will be final now.</p>
+<p>Note: for those using <code>s3bak</code> you can now add a <code>DefaultBucket</code> to your <code>~/.awssum</code> config file, thanks to a suggestion from <a href="http://feeding.cloud.geek.nz/">Francois</a>.
+</p>
+

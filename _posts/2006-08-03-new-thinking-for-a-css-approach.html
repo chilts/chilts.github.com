@@ -1,0 +1,87 @@
+---
+category: blog
+layout: post
+title: New Thinking for a CSS Approach
+published: true
+tags: [ css, html ]
+---
+<p>Having played with CSS using other people's styles, those of my own and
+those already existing, I had a thought the other day about how I would try
+it next time.</p>
+<p>Even though CSS is supposed to stop us from putting layout details into
+the HTML, it has it's own layout v style problem. Take, as an example,
+the following CSS:</p>
+<pre> div.content {
+    margin-top: 3px;
+    color: #333333;
+ }</pre>
+<p>This, in my opinion, actually contains both a style (the <code>color</code>) and a
+layout (the <code>margin-top</code>). I know that CSS is supposed to be all styles,
+which is why it is in the accronym, but sometimes it gets in the way too.</p>
+<p>As an example, on a rather large site I have been working on, there are
+quite a few different pages which share some generic styles but can vary
+greatly in the layout. It is a very data driven site rather than a content
+site, therefore, there are lots of finicky bits to help certain data stand
+out. The above class only contains 2 styles, but for some of these screens
+there are many, many more styles.</p>
+<p>Recently, I've been thinking of a new approach to this problem. On a smaller
+website I recently completed, in a lot of cases I was assigning 2 or more
+classes to each of the HTML elements. Sometimes these were each of style and
+layout, but in some cases, it was two styles and in others, it was two
+layouts. As an example:</p>
+<pre> .bg-shaded    { background-color: black }
+ .bg-highlight { background-color: white }
+ .bg           { background-color: gray }
+ .fg-heading   { color: #FFF; }
+ .em           { text-decoration: italic; }
+ .right        { text-align: right; }
+ .spaceit      { margin-top: 3px; }
+ .padit        { padding: 0px 12px; }</pre>
+<p>Then in the HTML:</p>
+<pre> &lt;div class=&quot;bg-shaded fg-heading em right spaceit padit&quot;&gt;This is extreme&lt;/div&gt;</pre>
+<p>I know there are various ways to help with this, especially leveraging the
+power of the 'cascading' part of the standard. Also, the use of <code>&lt;h#&gt;</code> and
+<code>&lt;p&gt;</code> and the rest can help, but as I said, the site is very data driven
+and therefore most things end up in <code>&lt;div&gt;</code>s.</p>
+<p>So the thought is that there is a <code>generic.css</code> stylesheet, in which go
+the standard styles used across the whole site. Then there is a
+<code>styles.css</code> stylesheet in which go the various text, font, colour,
+padding and border styles - it is these which can proliferate. But the main
+thing which became the hardest thing to cope with was the layout for each
+page since they were all very different, therefore, each page has it's own
+<code>layout.css</code> stylesheet.</p>
+<p>As a small example, here are some stylesheets:</p>
+<pre> file: generic.css
+ 
+ * {
+    padding: 0px;
+    margin: 0px;
+    font-size: 10px;
+    font-family: Arial, Helvetiva, sans-serif;
+ }</pre>
+<pre> file: styles.css
+ 
+ .hdr   { color: #ffffff; background-color: #006d1b; }
+ .sub   { color: #ffd96b; background-color: #108d18; }
+ .em    { text-style: italic; }
+ .upper { text-transform: uppercase }</pre>
+<pre> file: layout.css
+ 
+ .rounded-hdr { width: 400px; background: url(rounded_hdr.jpg) no-repeat top; }
+ .rounded-sub { width: 400px; background: url(rounded_sub.jpg) no-repeat bottom; }
+ .squared-hdr { width: 400px; background: url(squared_hdr.jpg) no-repeat top; }
+ .aquared-sub { width: 400px; background: url(squared_sub.jpg) no-repeat bottom; }</pre>
+<p>As an example then, you can choose a heading and subheading with rounded or
+squared corners:</p>
+<pre> &lt;div class=&quot;hdr rounded-hdr&quot;&gt;A Heading&lt;/div&gt;
+ &lt;div class=&quot;hdr rounded-hdr&quot;&gt;A sub-Heading&lt;/div&gt;</pre>
+<pre> &lt;div class=&quot;hdr squared-hdr upper&quot;&gt;A Heading&lt;/div&gt;
+ &lt;div class=&quot;hdr squared-hdr&quot;&gt;A sub-Heading&lt;/div&gt;</pre>
+<p>(I know a div of class 'hdr' or 'sub' could have been used around the whole
+thing and then the internal classes choose the images, but this was just an
+example. It also retains a great deal of flexibility.)</p>
+<p>You can assume that the number of styles, layout CSS and generic CSS is
+greatly increased on a much larger project. </p>
+<p>I might not have convinced you, but I am planning to try this out next time
+I run across a site with a large number of page layouts.</p>
+

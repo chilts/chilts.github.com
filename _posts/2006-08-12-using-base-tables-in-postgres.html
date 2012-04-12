@@ -1,0 +1,35 @@
+---
+category: blog
+layout: post
+title: Using Base Tables in PostgreSQL
+published: true
+tags: [ postgresql ]
+---
+<p>Sometimes object inheritance gets in the way, sometimes it helps. In this case, a small bit of inheritance for tables in Postgres really helps.</p>
+<p>Let's say you require all of your tables to contain columns of the same name and type. As an example, in a number of my Postgres databases, I like to have an <code>inserted</code> timestamp field on every table. This means I know exactly when that record was added - it's like a poor-man's audit.</p>
+<p>Therefore, instead of adding the <code>inserted</code> column to every table, like this:</p>
+<pre> CREATE TABLE news (
+    name            TEXT NOT NULL PRIMARY KEY,
+    title           TEXT NOT NULL,
+    article         TEXT NOT NULL,
+    inserted        TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+ );</pre>
+<p>You can try something like this:</p>
+<pre> CREATE TABLE base (
+    inserted        TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+ );</pre>
+<p>then:</p>
+<pre> CREATE TABLE news (
+    name            TEXT NOT NULL PRIMARY KEY,
+    title           TEXT NOT NULL,
+    article         TEXT NOT NULL,
+    LIKE base INCLUDING DEFAULTS
+ );</pre>
+<p>Of course, in this particular case, you don't save a lot of typing, but imagine if you had a 10, 20 or even hundreds of tables. You get the idea, but don't stop there. Here's another base table I use which also has a column for <code>updated</code>:</p>
+<pre> CREATE TABLE base (
+    inserted        TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated         TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+ );</pre>
+<p>Obviously, at the moment, this is exactly the same as the <code>inserted</code> column, but you'll see in the next article how this can be used to show the last time this record was updated.
+</p>
+

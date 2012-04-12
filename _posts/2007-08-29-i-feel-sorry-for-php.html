@@ -1,0 +1,16 @@
+---
+category: blog
+layout: post
+title: I Feel Sorry for PHP
+published: true
+tags: [ php, database ]
+---
+<p>...but is it really PHP or just this developer?</p>
+<p>Ignoring the title and the first half of this article, the second half makes me laugh. In the article <a href="http://www.oreillynet.com/onlamp/blog/2007/08/points_of_attack_php_and_ajax.html">Points of Attack: PHP and Ajax</a>, 
+<a href="http://www.oreillynet.com/pub/au/3059">Matthew McCool</a> says:</p>
+<p style="margin-left: 15px; margin-bottom: 16px; font-size: 80%;"> Second, you should consider using standard functions for processing user input. You probably don’t want HTML tags in your database, so it’s a good idea to use PHPs built in functions. It makes sense to use strip_tags() for removing unnecessary tags and then running mysql_real_escape_string() prior to database insertion.</p>
+<p>Firstly, I don't care if there are HTML tags in my database. If the user put them there, then fine, they go in the database. On the way <strong>out</strong> of the database and into whatever format the display media is, I <em>might</em> process that data somehow, be that HTML escaping it or whatever, but essentially I choose on the way <em>out</em> rather than the way <em>in</em>.</p>
+<p>Secondly, <code>mysql_real_escape_string()</code> - are you serious (or should that be real)? Apparently you don't use <code>mysql_escape_string() anymore, you use the <code>real</code> one</code> - hmm. Seems to cause more problems than it solves when you end up seeing quotes in the database anyway, obviously escaped multiple times. I'm not surprised it's confusing with that <code>add_slashes()</code>, <code>strip_slashes()</code> and the numerous other things that mess around with quotes and backslashes. The more you have to process something, the more you're likely to get it wrong. I'm assuming that <a href="http://www.php.net/pdo/">PDO</a> finally lays that that old trauma to rest.</p>
+<p>So yeah, I feel sorry for PHP. Or is that it's programmers I should feel sorry for.
+</p>
+

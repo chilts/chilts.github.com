@@ -1,0 +1,14 @@
+---
+category: blog
+layout: post
+title: s3bak Out Now
+published: true
+tags: [ s3bak, s3, amazon ]
+---
+<p>After playing with Amazon S3, I decided to write a little tool to help.</p>
+<p>At the moment it is a first cut with no Debian packaging, but so far it has a nice amount of functionality.</p>
+<p>You can create and remove buckets, list keys, add files, delete files but the best part is the ability to upload all missing files (in S3) and download all locally missing files.</p>
+<p>At the moment, it doesn't do anything if the key exists and is the same name as a local file, but I did have some code to check the MD5 and upload it if it has changed. This gives the problem that you might have changed the S3 files from somewhere else, therefore I will write a 'diff' which will have to be used manually to upload/download the correct version of the file.</p>
+<p>Oopse, I'm getting technical. Anyway, for now, it seems to work and does most of what I want. Go take a look at: <a href="http://code.google.com/p/s3bak/">s3bak at Google Code</a>.
+</p>
+

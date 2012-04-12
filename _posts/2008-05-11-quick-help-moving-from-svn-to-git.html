@@ -1,0 +1,41 @@
+---
+category: blog
+layout: post
+title: Quick Help Moving from SVN to Git
+published: true
+tags: [ git, planet-geek, svn, planet-catalyst ]
+---
+<p>Recently, I moved my Zaapt repository from a Subversion repository on Google Code into a Git repository on my server.</p>
+<p>Here's some (really) quick instructions on how I did it. I'll be using it as a quick guide later and it may come in useful for you too.</p>
+<p>If you want more detailed explanations on hosting Git repositories, see Nigel's <a href="http://nigel.mcnie.name/blog/using-git-for-your-sourceforgegoogle-code-project">excellent and more in-depth explanation</a>.  His takes you through a lot more cases (including the continued use of SVN, whereas this is about cutting the line completely).</p>
+<p>Notes:</p>
+<ul><li>the local machine is called 'alpha'</li><li>the remote machine is called 'beta'</li><li>you will access the repo over ssh+git</li><li>it is private and not public</li><li>you repo will be stored in /var/lib/git which is writable by you</li><li>the project is called 'zaapt' but replace that with your projectname</li></ul>
+<p>Firstly some setup:</p>
+<pre> alpha$ cd /tmp
+ alpha$ mkdir zaapt
+ alpha$ cd zaapt
+ alpha$ git-svn init http://zaapt.googlecode.com/svn/trunk/ --no-metadata</pre>
+<p>Then, you need to tell Git how to map Google Code usernames into commit names. I'm the only one who has commited to Zaapt so I just need one line:</p>
+<pre> alpha$ cat &gt; /tmp/users.txt
+ andychilton = Andrew Chilton &lt;andy@example.org&gt;
+ alpha$ git config svn.authorsfile /tmp/users.txt</pre>
+<p>Then you do the actual import. Two notes here. The first is that you don't want the initial repository version since that was created (as user nobody) when your Subversion repo was set up. The second I'm assuming you know the final version of your repo is 447:</p>
+<pre> alpha$ git-svn fetch -r 2:447
+ ...etc...</pre>
+<p>Earlier I said that we would be hosting our repository on our own server, so let's get a bare-bones repo without any of the SVN cruft left:</p>
+<pre> alpha$ cd ../
+ alpha$ git clone --bare --local zaapt/.git zaapt.git 
+ alpha$ chmod +x zaapt.git/hooks/post-update
+ alpha$ vim zaapt.git/description</pre>
+<p>Now copy the repo to your server. I'm assuming you want them in <code>/var/lib/git</code>:</p>
+<pre> alpha$ scp -r zaapt.git beta:/var/lib/git</pre>
+<p>You're now done with everything we created in /tmp/ so remove them if you like. Now get a fresh clone of the new repo:</p>
+<pre> alpha$ cd ~/git/
+ alpha$ git clone ssh+git://beta/var/lib/git/zaapt.git</pre>
+<p>And if you want a checkout at the far end too:</p>
+<pre> beta$ cd ~/git/
+ beta$ git clone --local /var/lib/git/zaapt.git</pre>
+<p>That's it. Simple but it gets the job done for what I wanted it for.</p>
+<p>For further reading, see Nigel's page above, Sam's extensive page on <a href="http://utsl.gen.nz/talks/git-svn/intro.html">An introduction to git-svn...</a> and Chris' page about <a href="http://www.bluishcoder.co.nz/2007/09/how-to-publish-git-repository.html">publishing git repositories</a>
+</p>
+

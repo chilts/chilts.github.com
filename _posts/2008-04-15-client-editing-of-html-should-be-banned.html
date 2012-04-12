@@ -1,0 +1,32 @@
+---
+category: blog
+layout: post
+title: Client Editing of HTML should be Banned
+published: true
+tags: [ web, html, cms, planet-geek, planet-catalyst, content ]
+---
+<p>It is well known that the large majority of HTML pages out there are invalid HTML, use custom tags and have layout information mixed in with semantic information.</p>
+<p>The real surprise though is that a lot of these pages have been crafted by professional designers and developers over the years. People who are actually being paid to create these things. Properly you might think. But no, not even close.</p>
+<p>So if the people who are being paid to create the HTML can't create it correctly, what hope does that leave someone who isn't trained in it at all? </p>
+<p>The answer is (of course) none. No hope whatsoever. Even assuming they have had minimal training in HTML, it just isn't enough.</p>
+<p>But why is that whenever we have a new client and they say <em>&quot;And we want a WYSIWYG to be able to edit everything&quot;</em> we say without hesitation <em>&quot;Of course&quot;</em>. In my view, the customer is not always right and it is wrong to give them that option.</p>
+<p>I'm of the opinion that WYSIWYG editors are bad for clients to use especially because most editors generate HTML. The client moves on from wanting some minor formatting buttons and quickly on to <em>&quot;we want to edit all the HTML in the world directly&quot;</em>.</p>
+<p>This just causes problems. Not just immediate ones but long term ones too.</p>
+<p>Firstly the client starts creating weird and wonderful effects (as shown today on <a href="http://www.contented.com/contented/?p=371">Contented</a>). Soon enough they start creating invalid, inconsistent and badly formatted HTML. It gets even worse when <code>&lt;font&gt;</code>, <code>color=&quot;#bbb&quot;</code> and unclosed tags start appearing. Don't even get me started about embedding JavaScript in tags to popup a video window - it's not nice and it ain't pretty.</p>
+<p>(Aside: I tried to explain unobtrusive JavaScript to a client once but I'm not sure I was explaining it on the right level even if there is such a level as a correct one.)</p>
+<p>Even ignoring the actual edited HTML it also leaves the rest of the nicely groomed and well maintained site at the whim of someone who knows nothing about the web let alone the subtleties of HTML.</p>
+<p>This practice is incorrect and this function should never be given to the client. It's in their best interests <strong>not</strong> to be able edit HTML and this practice should be changed.</p>
+<p>Instead, clients should be given one of two options:</p>
+<p>1) a <strong>a semantic markup language</strong> they can use which is relevant to their site. Anything to do with styles, layout and formatting is no concern of theirs. Instead they should know what a heading is, a paragraph, some emphasised text and what a link looks like. If you want to give them higher abstractions, how about an external link or a popup one. What about an embedded picture from a local store or from Flickr, or even a  YouTube video. This is easy from your point of view and simpler from theirs (no more HTML cheat sheets for the editors).</p>
+<p>2) or give them <strong>proper editing screens</strong> in the CMS which lets them edit only the content of the site. Whenever something should look different it should be because it <strong>is</strong> different not because someone says it should look different. The <em>Content Management System</em> should be for editing <strong>content</strong> and content only. It is not a <em>Content, layout, formatting and stylesheet Management System</em>. (And no, I don't believe they should be able to move blocks around in the CMS either but that's a different story.)</p>
+<p>Let me give you an example of what happens now and what really should be happening. Let's say you have blog entries on the site each of which has a headline but depending on what type of blog entry it is (technical, opinion, guest), the sub-heading should look slightly different.</p>
+<p>What happens now is the following. The editor says to himself:</p>
+<blockquote>&quot;Hmm, this blog entry is an opinion piece so the subheading should be blue and bold, but this one is a newsflash, so the subheading should be red and flashing!&quot;</blockquote>
+<p>This is bad. Bad, bad, bad.</p>
+<p>To fix this you need to do some research on how many different types of blog entry there are. It's not so hard really.</p>
+<p>You just quiz the client on how many blog entry types there are and arrange for the appropriate tickboxes, drop-downs or select boxes to appear in the CMS. This way the styles for every blog entry type are correct, consistent and don't look terrible. Furthermore, they are semantically defined rather than syntactically defined. (You have heard of the semantic web, haven't you?)</p>
+<p>And finally, if those advantages weren't enough this last one really drums it home. When the site's design is changed in 2 or 3 years time and the blog entries have to look consistent with the new design, showing the sub-headings with the new correct styling is trivial.</p>
+<p>Try doing that when your subheading has invalid, unknown and inconsistent HTML in it. Furthermore, if you think sub-headings are a problem, just wait until you get onto the blog entry itself, spotted and pitmarked with nasty HTML all over the place.</p>
+<p>All I can say is, good luck to you or the poor person who has taken over on the project. That's going to one beast to untangle.
+</p>
+

@@ -1,0 +1,35 @@
+---
+category: blog
+layout: post
+title: sshfs with Lots of Space
+published: true
+tags: [ fuse, ssh ]
+---
+<p>I just used Fuse to mount my home directories on two remote machines - and was pretty painless.</p>
+<p>I'm using Ubuntu 6.10 so was fairly easy. I followed the instructions from here - <a href="http://ubuntu.wordpress.com/2005/10/28/how-to-mount-a-remote-ssh-filesystem-using-sshfs/">How to mount a remote ssh filesystem using sshfs</a>.</p>
+<p>So I did:</p>
+<pre> # apt-get install sshfs
+ # adduser andy fuse
+ # mkdir /mnt/fowler /mnt/rush
+ # chown andy.andy /mnt/fowler /mnt/rush</pre>
+<p>Then (after logging out and in again to refresh my groups list):</p>
+<pre> $ sshfs fowler:/home/andy /mnt/fowler
+ $ sshfs rush:/home/andy /mnt/rush
+ 
+ $ ls -l /mnt/fowler
+ ...stuff...
+ $ ls -l /mnt/rush
+ ...stuff...</pre>
+<p>Note: <code>sshfs fowler:~ /mnt/fowler</code> didn't seem to work. I don't know why, I suspect it should.</p>
+<p>Since I use <a href="http://www.gentoo.org/proj/en/keychain/">KeyChain</a> for my SSH keys, I usually have those loaded by the time I want to look at a remote machine.</p>
+<p>Anyway, it's fairly cool and dead easy.</p>
+<p>One funny thing though was:</p>
+<pre> [metis:~]$ df -h /mnt/fowler
+ Filesystem            Size  Used Avail Use% Mounted on sshfs#fowler:/home/andy/
+                       7.5T     0  7.5T   0% /mnt/fowler
+ [metis:~]$ df -h /mnt/rush
+ Filesystem            Size  Used Avail Use% Mounted on sshfs#rush:/home/andy/
+                       7.5T     0  7.5T   0% /mnt/rush</pre>
+<p>A total of 15 Terabytes of storage :-) especially because <code>fowler</code> only has 40Gb of storage and <code>rush</code> is a 4Gb VPS :-)
+</p>
+

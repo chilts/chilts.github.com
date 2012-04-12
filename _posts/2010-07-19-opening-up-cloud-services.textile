@@ -1,0 +1,25 @@
+---
+category: blog
+layout: post
+title: Opening Up Cloud Services
+published: true
+tags: [ rackspace, foss, cloud ]
+---
+It's been a while since I posted but this particular news item today has definitely made my ears prick up. Of course, I'm presuming what this also means for the future and I hope I'm right.
+
+"RackspaceCloud":http://www.rackspacecloud.com/blog/2010/07/19/open-stack/ and "NASA":http://www.nasa.gov/ (of all people) have started a joint initiative called "OpenStack":http://openstack.org/. Basically it means that there will be an open source solution to cloud servers and other web services. Yes, I know about "Eucalyptus":http://www.ubuntu.com/cloud but I think this means much more than that.
+
+From what I understand, they will be open sourcing the code that powers their "Cloud Servers":http://www.rackspacecloud.com/cloud_hosting_products/servers API and in the not too distant future, the code that powers their "Cloud Files":http://www.rackspacecloud.com/cloud_hosting_products/files service too.
+
+If I extrapolate with hope, then I can only imagine that they will also be adding more services in the future, such as a queuing system, a notification service and possibly a distributed DB service! Yes, these are all examples of the wonderful (but proprietary) services that "Amazon Web Services":http://aws.amazon.com/ already provide.
+
+Anyway, today is looking like it could be a good day for the future of cloud computing. Being able to run a free and open source operating system inside a virtual machine which is running a FOSS OS, using FOSS services for your own FOSS software can only be a good thing. If I didn't say FOSS enough in this paragraph, let me say it one more time - FOSS!
+
+Oh, and the other great thing about this is that it opens up competition and freedom to move providers. If you don't like the provider you're using, then due to the nature of the services being open source, you'll be able to switch to other providers you _do_ like! This is very much in contrast with the Amazon model where you get locked in using their services.
+
+Finally, it seems that today also marks the first day of "OSCON":http://www.oscon.com/oscon2010, and seeing as how RackspaceCloud's API is much more RESTful than Amazon's, and how they seem to say they're an open source company, I can only assume that they doing the right thing and doing it well. Let's hope they keep to their promise and deliver.
+
+Of course, with Rackspace being a far 2nd in terms of numbers of servers to Amazon's own EC2 offering I can only say that even if they didn't make this decision because of those stats, it can only help it along :)
+
+Well done Rackspace!
+

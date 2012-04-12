@@ -1,0 +1,66 @@
+---
+category: blog
+layout: post
+title: New Cil release v0.3.0
+published: true
+tags: [ cil, planet-geek, planet-catalyst ]
+---
+<p>Here's another release of cil for your perusal. Staying true to the &quot;Release early, release often&quot; mantra, I hope you have fun playing with it.</p>
+<p>I'll quickly go through all the features in this <a href="/s/files/cil-v0.3.0.tar.gz">release</a>:</p>
+<h2>Filters when Listing Issues</h2>
+<p>For example:</p>
+<pre> $ cil list --label=Type-Critical
+ $ cil list --status=New
+ $ cil list --assigned-to=andychilton-at-gmail-dot-com</pre>
+<p>(Note: --label and --status were in v0.2.1.) These can be combined too. For example, this is the command line I used to make sure there were no outstanding issues for this release of cil:</p>
+<pre> $ cil list --is-open --label=Milestone-v0.3</pre>
+<p>and opposite to that, for the changelog I could figure out what had changed since the last release by doing this:</p>
+<pre> $ cil list --is-closed --label=Milestone-v0.3</pre>
+<p>If I was on a big project, I'd probably cron something like this to send me an email each morning:</p>
+<pre> $ cil list --is-open --assigned-to=andychilton-at-gmail-dot-com --label=Priority-Critical</pre>
+<p>That's a pretty nice filter :-)</p>
+<h2>Added a '.cil' Config File</h2>
+<p>To be able to do some of the filters above (e.g. <code>--is-open</code> and <code>--is-closed</code>) cil now reads a config file and can determine which statuses and labels are valid. There are also lists to say which statuses are considered open or closed. Of course, if you want neither of features you can just turn them off (which is the default behaviour).</p>
+<h2>Added a 'fsck' Command</h2>
+<p>Cil saves it's issues, comments and attachments in the filesystem which isn't usually a good way for (slightly) relational data. The new 'fsck' command can help you figure out missing entities though. For example, if an issue is missing its comments or attachments and whether comments or attachments have been orphaned. It also runs some validation against each issue. Validation at the moment consists of checking statuses and labels in their respective allowed list.</p>
+<p>Here is some example output you might see from this command (usually if you or someone else has not been tracking the right things):</p>
+<pre> ===============================================================================
+ --- Issue c4fa2e27  -----------------------------------------------------------
+ * StatusStrict is turned on but this issue has an invalid status 'InProg'
+ * LabelStrict is turned on but this issue has an invalid label 'Something'
+ --- Issue 1f67bc27  -----------------------------------------------------------
+ * comment '8dfe256c' listed in issue '1f67bc27' does not exist
+ * comment '99b20701' is listed under issue '1f67bc27' but does not reciprocate
+ * attachment '29afc3ef' listed in issue '1f67bc27' does not exist
+ ===============================================================================
+ --- Comment 99b20701  ---------------------------------------------------------
+ * comment '99b20701' refers to issue '893f7ea6' but issue does not exist
+ ===============================================================================
+ --- Attachment 37873839  ------------------------------------------------------
+ * attachment '37873839' refers to issue '8af89d74' but issue does not exist
+ ===============================================================================</pre>
+<p>More validation checks will be in v0.4.</p>
+<h2>Bash Completion of Commands, Options and Entities</h2>
+<p>(Where 'entities' are issues, commands or attachments.)</p>
+<p>As stated in a previous post, there is now <a href="cil-now-has-bash-completion.html">bash completion for cil</a>.</p>
+<h2>Working Practices</h2>
+<p>As I said earlier, I use a few command lines to let me figure out when I can release a version. For example, the next release is going to be <code>v0.4.0</code> (barring any bug fixes to <code>v0.3.0</code>) so I tag all of the issues I want done for that release with <code>Milestone-v0.4</code>. This makes it easy to see what needs doing and what is already done:</p>
+<pre> $ cil list --is-open --label=Milestone-v0.4
+ $ cil list --is-closed --label=Milestone-v0.4</pre>
+<p>For example, an issue might have been added at some stage in the past, complete with labels:</p>
+<pre> $ cil add
+ ... added issue 'cafebabe' ...</pre>
+<p>I usually commit the new issue to my VCS immediately. When I start working on it, I'll mark it <code>InProgress</code>, even if it is just locally. Sometimes I check this in too if it's going to be longer than a few hours:</p>
+<pre> $ cil status cafebabe InProgress</pre>
+<p>Once I've finished hacking on the issue and I'm happy with it, I set it to <code>Finished</code> and add a comment to say what I've done:</p>
+<pre> $ cil status cafebabe Finished
+ $ cil comment cafebabe
+ ... added comment 'decaf7ea' ...</pre>
+<p>I use Git for my VCS so prior to check in I stage all the working file changes but also make sure Git is tracking the issue properly too. It already knew about the issue file but I need to add the comment file that goes with it:</p>
+<pre> $ git add issues/c_decaf7ea.cil</pre>
+<p>Finally when I commit, I commit the code, the issue and the comment all together. In the message I usually put the text '<code>(closes #cafebabe)</code>'. This keeps everything together.</p>
+<h2>What's Next</h2>
+<p>The next release of cil will be <code>Milestone-v0.4</code> so I'll add that label to a few items I want in it. If there is something I want for the future but haven't roadmapped them yet (into v0.5, v0.6 etc) then I just put a <code>Milestone-Future</code> label on them so I know I want to do them but just don't know when.</p>
+<p>Happy hacking and look out for <code>v0.4</code> sometime in the next week or so.
+</p>
+
