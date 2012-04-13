@@ -20,7 +20,7 @@ ingredients:
 serves: ???
 tags: [ spinach, cannelloni, cottage-cheese ]
 ---
-h2. Method
+## Method ##
 
 Chop the onion and mince the garlic.
 
