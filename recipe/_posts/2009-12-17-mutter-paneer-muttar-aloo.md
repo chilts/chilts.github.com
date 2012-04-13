@@ -24,7 +24,7 @@ ingredients:
 - Green coriander leaves for garnishing
 tags: [ curry, potato, paneer, aloo ]
 ---
-From: [Recipe Delights](http://www.recipedelights.com/recipes/vegdishes/Mutterpaneer.htm).
+From [Recipe Delights](http://www.recipedelights.com/recipes/vegdishes/Mutterpaneer.htm).
 
 To make either Mutter Paneer or Mutter Aloo, choose either the Paneer or the Potatoes as the first ingredient.
 

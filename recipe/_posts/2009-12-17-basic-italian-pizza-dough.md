@@ -13,7 +13,7 @@ ingredients:
 serves: 2 medium pizzas (or about 225g dough)
 tags: [ pizza ]
 ---
-From: [CookItSimply](http://www.cookitsimply.com/recipe-0010-013446r.html).
+From [CookItSimply](http://www.cookitsimply.com/recipe-0010-013446r.html).
 
 ## Method ##
 

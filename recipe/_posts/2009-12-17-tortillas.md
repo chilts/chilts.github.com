@@ -11,7 +11,7 @@ ingredients:
 - 1 Tbsp. vegetable shortening (or lard)
 tags: [ flour, tortillas, bread ]
 ---
-From: [WikiHow](http://www.wikihow.com/Make-Your-Own-Tortillas).
+From [WikiHow](http://www.wikihow.com/Make-Your-Own-Tortillas).
 
 I find that these are beautiful in comparison to the ones found in the vacuum packs in the shops. They're also way
 cheaper too.

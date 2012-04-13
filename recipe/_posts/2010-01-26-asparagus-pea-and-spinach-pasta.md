@@ -14,7 +14,7 @@ ingredients:
 tags: [ asparagus, spinach, pasta ]
 ---
 
-From: [Prawn, pea and asparagus
+From [Prawn, pea and asparagus
 pasta](http://www.healthyfood.co.nz/recipes/2007/november/prawn-pea-and-asparagus-pasta).
 
 The sour cream adds creaminess, the lemon and chilli little spikes of flavour, and the greens and asparagus give a

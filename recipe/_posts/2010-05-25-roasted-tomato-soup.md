@@ -16,7 +16,7 @@ ingredients:
 tags: [ soup ]
 ---
 
-Originally from: [101 Cookbooks](http://www.101cookbooks.com/archives/roasted-tomato-soup-recipe.html).
+Originally from [101 Cookbooks](http://www.101cookbooks.com/archives/roasted-tomato-soup-recipe.html).
 
 ## Method ##
 
