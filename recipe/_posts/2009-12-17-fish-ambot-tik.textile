@@ -1,7 +1,8 @@
 ---
 category: recipe
 layout: recipe
-title: Fish Ambot Tik (Fish in a Hot and Sour Sauce)
+title: Fish Ambot Tik
+tagline: Fish in a Hot and Sour Sauce
 published: true
 ingredients:
 - 750g steaks of shark or monk fish
