@@ -2,11 +2,12 @@
 layout: page
 title: Hello, World!
 ---
-You've probably come here for:
+You have probably arrived here in search of:
 
 * My [blog](/blog/)
-* or [Retire at 40](/retire-at-40/)
+* some [recipes](/recipe/)
+* or my personal finance blog [Retire at 40](/retire-at-40/).
 
-... or some other things.
+... or something else entirely.
 
 (Ends)
