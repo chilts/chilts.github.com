@@ -12,7 +12,7 @@ ingredients:
 - 1 tablespoon minced or crushed garlic
 - 1 small onion, finely chopped
 - 1 tablespoon ground coriander
-- &frac12;-1 teaspoon chilli powder
+-  &frac12;-1 teaspoon chilli powder
 - 2 teaspoons sweet paprika
 - 90g creamed coconut, cut into small pieces
 - 300ml warm water
