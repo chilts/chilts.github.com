@@ -35,4 +35,4 @@ Fill the cannelloni shells with the cottage cheese filling and place the cannell
 remaining tomato sauce mixture to cover. Mix the remaining Parmesan cheese with the fresh breadcrumbs and pine nuts and
 sprinkle over the dish.
 
-Bake at 190°C for 25-30 minutes until the cannelloni is tender.
+Bake at 190&deg;C for 25-30 minutes until the cannelloni is tender.
