@@ -4,7 +4,7 @@ title: Hello, World!
 ---
 You have probably arrived here in search of:
 
-* My [blog](/blog/)
+* My [blog](/blog/),
 * some [recipes](/recipe/)
 * or my personal finance blog [Retire at 40](/retire-at-40/).
 

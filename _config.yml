@@ -24,6 +24,10 @@ paginator: false
 topnav:
 - text : Blog
   url  : /blog/
+- text : Recipes
+  url  : /recipe/
+- text : Retire at 40
+  url  : /retire-at-40/
 - text : Wiki
   url  : /wiki/
 - text : About
