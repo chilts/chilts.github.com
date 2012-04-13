@@ -11,7 +11,7 @@ ingredients:
 tags: [ egg, pasta ]
 ---
 
-From [GetFrank](http://www.getfrank.co.nz/fresh-egg-pasta/). (Licensed under a Creative Commons
+From: [GetFrank](http://www.getfrank.co.nz/fresh-egg-pasta/). (Licensed under a Creative Commons
 Attribution-Noncommercial 3.0 License.)
 
 ## Method ##

@@ -24,7 +24,7 @@ ingredients:
 - Green coriander leaves for garnishing
 tags: [ curry, potato, paneer, aloo ]
 ---
-From [Recipe Delights](http://www.recipedelights.com/recipes/vegdishes/Mutterpaneer.htm)
+From: [Recipe Delights](http://www.recipedelights.com/recipes/vegdishes/Mutterpaneer.htm).
 
 To make either Mutter Paneer or Mutter Aloo, choose either the Paneer or the Potatoes as the first ingredient.
 
@@ -34,7 +34,6 @@ To make either Mutter Paneer or Mutter Aloo, choose either the Paneer or the Pot
 1. Cut paneer/potatoes into small cubes. Fry over medium heat until light brown. Turn pieces while frying. Be very
    careful as it splatters. Keep aside the paneer pieces.
 1. Cut onion, tomato and green chilli. Grind it in mixie and make paste. Add ginger-garlic paste.
-
 1. Heat remaining oil and fry bay leaves and cloves for 30 secs. Add the paste and fry on medium heat until golden
    brown (The oil starts separating from the mixture).
 1. Add red chilli powder, turmeric powder, coriander powder, garam masala, black pepper powder, poppey seeds and

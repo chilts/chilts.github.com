@@ -10,7 +10,7 @@ tags: [ curry, eggplant, balti ]
 
 I really liked this recipe. Originally from the [Vegetarian
 Society](http://www.vegsoc.org/nvw/2006/recipes/aubbalti.html) website. Otherwise known as "Aubergine, Potato and Chick
-Pea Balti" but I like "Birmingham Balti".
+Pea Balti" but I like the name "Birmingham Balti" better.
 
 For the vegetables:
 

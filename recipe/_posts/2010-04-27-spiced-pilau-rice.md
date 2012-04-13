@@ -16,7 +16,7 @@ ingredients:
 - salt
 tags: [ rice ]
 ---
-This fragrant rice dish is lovely to serve with curries and spiced dishes.
+This fragrant rice dish is lovely served with curries and spiced dishes.
 
 ## Method ##
 

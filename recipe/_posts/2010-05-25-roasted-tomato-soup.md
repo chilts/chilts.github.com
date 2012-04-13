@@ -2,6 +2,7 @@
 category: recipe
 layout: recipe
 title: Roasted Tomato Soup
+tagline: Great for Winter
 published: true
 ingredients:
 - 5 tomatoes, quartered

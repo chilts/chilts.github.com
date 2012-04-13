@@ -41,7 +41,7 @@ Lemon Cake:
 
 Lemon Frosting:
 
-# Place icing sugar in a bowl and combine with the lemon juice.
-# Drizzle over cooled cake so the frosting drips down the side.
-# Let the icing set before covering.
+1. Place icing sugar in a bowl and combine with the lemon juice.
+1. Drizzle over cooled cake so the frosting drips down the side.
+1. Let the icing set before covering.
 

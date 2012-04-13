@@ -18,7 +18,7 @@ ingredients:
 - Vegetable oil as required
 tags: [ spinach, curry, paneer ]
 ---
-From [Recipe Delights](http://www.recipedelights.com/recipes/vegdishes/PalakPaneer.htm)
+From: [Recipe Delights](http://www.recipedelights.com/recipes/vegdishes/PalakPaneer.htm).
 
 ## Method ##
 
