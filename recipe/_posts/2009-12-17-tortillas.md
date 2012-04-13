@@ -18,18 +18,18 @@ cheaper too.
 
 ## Method ##
 
-# Combine flour, salt, & baking powder in a large medium/large bowl.
-# Cut in shortening until lumps are gone.
-# Make a well (indentation) in the center of the dry ingredients.
-# Add water, about a half a cup at a time, and work mixture into a dough. #Knead until smooth. The dough should be
-  slightly sticky but not hard. You can add slightly more water or flour if needed.
-# Cover and set aside for 10 minutes.
-# Form dough into balls about the size of eggs.
-# Using a rolling pin, roll each dough ball into about a 6 inch circle.
-# Heat griddle or skillet on med heat without grease.
-# Cook tortilla 1/2 to 1 minute (if it starts to bubble, that's long enough).
-# Flip tortilla to the other side and cook for a few seconds.
-# Continue in this manner until all your dough is cooked.
+1. Combine flour, salt, & baking powder in a large medium/large bowl.
+1. Cut in shortening until lumps are gone.
+1. Make a well (indentation) in the center of the dry ingredients.
+1. Add water, about a half a cup at a time, and work mixture into a dough. #Knead until smooth. The dough should be
+   slightly sticky but not hard. You can add slightly more water or flour if needed.
+1. Cover and set aside for 10 minutes.
+1. Form dough into balls about the size of eggs.
+1. Using a rolling pin, roll each dough ball into about a 6 inch circle.
+1. Heat griddle or skillet on med heat without grease.
+1. Cook tortilla 1/2 to 1 minute (if it starts to bubble, that's long enough).
+1. Flip tortilla to the other side and cook for a few seconds.
+1. Continue in this manner until all your dough is cooked.
 
 ## Notes ##
 
