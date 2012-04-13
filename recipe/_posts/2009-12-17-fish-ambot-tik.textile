@@ -32,5 +32,6 @@ h2. Method
 
 Serve with plain boiled rice and vegetable stew.
 
-Note: We have found any white fish works well. I also find that the amount of fish can be reduced since I find it a
-large amount.
+h2. Notes
+
+Note: We have found any white fish works well. I also find that the amount of fish can be reduced since I find it a large amount.
