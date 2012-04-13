@@ -1,3 +1,5 @@
+## ----------------------------------------------------------------------------
+
 exclude: [README.md, _posts/skeleton-post.md]
 auto: true
 pygments: true
