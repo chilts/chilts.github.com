@@ -27,6 +27,12 @@ topnav:
 - text : About
   url  : /about.html
 
+# Meta
+meta:
+  google_analytics_tracking_id: 'UA-12250639-1'
+
+## ----------------------------------------------------------------------------
+
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
@@ -124,3 +130,4 @@ JB :
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
   
+## ----------------------------------------------------------------------------
