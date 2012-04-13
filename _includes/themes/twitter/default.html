@@ -6,10 +6,10 @@
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
 
-    <link rel="alternate" type="application/rss+xml" title="chilts.org - RSS feed"
-        href="http://chilts.org/{{ page.category }}/rss20.xml" />
-    <link rel="alternate" type="application/x.atom+xml" title="chilts.org - Atom Feed"
-        href="http://chilts.org/{{ page.category }}/atom.xml" />
+    {% if page.category %}
+    <link rel="alternate" type="application/rss+xml" title="chilts.org - RSS feed" href="http://chilts.org/{{ page.category }}/rss20.xml" />
+    <link rel="alternate" type="application/x.atom+xml" title="chilts.org - Atom Feed" href="http://chilts.org/{{ page.category }}/atom.xml" />
+    {% endif %}
 
     <!-- styles -->
     <link href="{{ ASSET_PATH }}/bootstrap-2.0.2/css/bootstrap.min.css" rel="stylesheet">
