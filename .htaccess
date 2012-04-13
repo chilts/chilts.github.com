@@ -1,0 +1,5 @@
+# Make sure all pages are sent UTF8
+AddDefaultCharset UTF-8
+
+# Rewrite the old Atom feed to the new one
+RewriteRule ^/atom.xml$ http://chilts.org/blog/atom.xml [R=301]
