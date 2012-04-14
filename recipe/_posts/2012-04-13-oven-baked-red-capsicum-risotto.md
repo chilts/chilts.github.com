@@ -1,7 +1,7 @@
 ---
 category: recipe
 layout: recipe
-title: Over Baked Red Pepper Risotto
+title: Over Baked Red Capsicum Risotto
 tagline: Just lovely with Cheese on top!
 published: true
 ingredients:
