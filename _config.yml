@@ -1,6 +1,6 @@
 ## ----------------------------------------------------------------------------
 
-exclude: [README.md, _posts/skeleton-post.md]
+exclude: [Makefile, README.md, _posts/skeleton-post.md, scripts/]
 auto: true
 pygments: true
 
