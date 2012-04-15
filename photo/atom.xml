@@ -6,7 +6,7 @@ title : Atom Feed
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>{{ site.title }}</title>
- <link href="{{ site.url }}/blog/atom.xml" rel="self"/>
+ <link href="{{ site.url }}/photo/atom.xml" rel="self"/>
  <link href="{{ site.url }}"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>{{ site.url }}</id>
@@ -15,7 +15,7 @@ title : Atom Feed
    <email>{{ site.author.email }}</email>
  </author>
 
-{% for post in site.categories.blog limit:30 %}
+{% for post in site.categories.photo limit:30 %}
  <entry>
    <title>{{ post.title }}</title>
    <link href="{{ site.url }}{{ post.url }}"/>

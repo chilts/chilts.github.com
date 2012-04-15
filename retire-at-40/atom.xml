@@ -15,8 +15,7 @@ title : Atom Feed
    <email>{{ site.author.email }}</email>
  </author>
 
-{% for post in site.posts limit:30 %}
-  {% if post.category == 'retire-at-40' %}
+{% for post in site.categories.retire-at-40 limit:30 %}
  <entry>
    <title>{{ post.title }}</title>
    <link href="{{ site.url }}{{ post.url }}"/>
@@ -24,7 +23,6 @@ title : Atom Feed
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
-  {% endif %}
 {% endfor %}
  
 </feed>
