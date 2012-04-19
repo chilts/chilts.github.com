@@ -14,6 +14,10 @@
     border-style: outset;
 }
 
-#preload {
-    display: none;
+.select {
+    cursor: pointer;
+}
+
+.row {
+    margin-top: 20px;
 }
