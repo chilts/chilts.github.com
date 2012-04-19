@@ -8,12 +8,12 @@ $(function() {
         [ 12, 13, 14, 15 ]
     ];
 
+    var moving = false;
     var $tiles = $('.tile');
 
     function findId(id) {
         for ( var i = 0; i < 4; i++ ) {
             for ( var j = 0; j < 4; j++ ) {
-                console.log(id, i, j, grid[j][i]);
                 if ( grid[j][i] === id ) {
                     return { 'i' : i, 'j' : j };
                 }
@@ -27,11 +27,9 @@ $(function() {
     }
 
     function checkComplete() {
-        console.log('Checking if complete');
         var num = 0;
         for( var j = 0; j < 4; j++ ) {
             for( var i = 0; i < 4; i++ ) {
-                console.log(i, j);
                 if ( grid[j][i] !== num ) {
                     return false;
                 }
@@ -40,26 +38,24 @@ $(function() {
         }
 
         // might be finished
-        console.log("Well done, you've won");
+        console.log("Well done, you've won!");
     }
 
     function makeMove(pos, id) {
         var i = pos.i;
         var j = pos.j;
 
-        console.log('Checking ' + i + ':' + j);
-
         // check above
         if ( j > 0 ) {
-            console.log('above');
             if ( grid[j-1][i] === 15 ) {
-                console.log('above wins');
+                moving = true;
                 $($tiles[id]).animate(
                     { 'top' : '-=115' },
                     function() {
                         grid[j-1][i] = grid[j][i];
                         grid[j][i] = 15;
                         checkComplete();
+                        moving = false;
                     }
                 );
                 return;
@@ -68,15 +64,15 @@ $(function() {
 
         // check below
         if ( j < 3 ) {
-            console.log('below');
             if ( grid[j+1][i] === 15 ) {
-                console.log('below wins');
+                moving = true;
                 $($tiles[id]).animate(
                     { 'top' : '+=115' },
                     function() {
                         grid[j+1][i] = grid[j][i];
                         grid[j][i] = 15;
                         checkComplete();
+                        moving = false;
                     }
                 );
                 return;
@@ -85,15 +81,15 @@ $(function() {
 
         // check left
         if ( i > 0 ) {
-            console.log('left');
             if ( grid[j][i-1] === 15 ) {
-                console.log('left wins');
+                moving = true;
                 $($tiles[id]).animate(
                     { 'left' : '-=115' },
                     function() {
                         grid[j][i-1] = grid[j][i];
                         grid[j][i] = 15;
                         checkComplete();
+                        moving = false;
                     }
                 );
                 return;
@@ -102,15 +98,15 @@ $(function() {
 
         // check right
         if ( i < 3 ) {
-            console.log('right');
             if ( grid[j][i+1] === 15 ) {
-                console.log('right wins');
+                moving = true;
                 $($tiles[id]).animate(
                     { 'left' : '+=115' },
                     function() {
                         grid[j][i+1] = grid[j][i];
                         grid[j][i] = 15;
                         checkComplete();
+                        moving = false;
                     }
                 );
                 return;
@@ -127,16 +123,16 @@ $(function() {
 
     $('.tile').click(function(ev) {
         ev.preventDefault();
+        if ( moving ) {
+            return;
+        }
 
         // figure out what number this tile is
         var $this = $(this);
         var id = $(this).attr('id');
         id = parseInt(id);
 
-        console.log(id);
-
         var pos = findId(id);
-        console.log(pos);
 
         // now make the tile move if it's ok
         makeMove(pos, id);
