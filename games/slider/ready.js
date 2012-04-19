@@ -1,3 +1,14 @@
+// From: http://blog.mastykarz.nl/jquery-random-filter/
+jQuery.jQueryRandom = 0;
+jQuery.extend(jQuery.expr[":"], {
+    random: function(a, i, m, r) {
+        if (i == 0) {
+            jQuery.jQueryRandom = Math.floor(Math.random() * r.length);
+        };
+        return i == jQuery.jQueryRandom;
+    }
+});
+
 $(function() {
 
     // zero is where the blank tile is
@@ -242,9 +253,8 @@ $(function() {
     }
 
     // for all of the tiles, add the background image
-    var img = 'img/elephant.png';
     $('.tile').css({
-        'background-image' : 'url(' + img + ')'
+        'background-image' : 'url(' + $('.select:random').attr('src') + ')'
     });
 
     $('.tile').click(function(ev) {
