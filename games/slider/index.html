@@ -10,35 +10,55 @@ css:
 - styles.css
 ---
 
-<p>
-    <strong>Instructions:</strong> Click on a tile to move it into the space. Keep moving tiles until you have arranged
-    all 15 in the right order. The blank space should end up in the bottom right hand corner.
-</p>
+<div class="row">
+  <div class="span12">
+    <p>
+      <strong>Instructions:</strong> Click on a tile to move it into the space. Keep moving tiles until you
+      have arranged all 15 in the right order. The blank space should end up in the bottom right hand corner.
+    </p>
+  </div>
+</div><!-- /.row -->
 
-<div id="board">
-    <div  id="0" class="tile" style="left: 0px; top: 0px; background-position: -0px -0px;"></div>
-    <div  id="1" class="tile" style="left: 115px; top: 0px; background-position: -105px -0px;"></div>
-    <div  id="2" class="tile" style="left: 230px; top: 0px; background-position: -210px -0px;"></div>
-    <div  id="3" class="tile" style="left: 345px; top: 0px; background-position: -315px -0px;"></div>
+<div class="row">
 
-    <div  id="4" class="tile" style="left: 0px; top:115px; background-position: -0px -105px;"></div>
-    <div  id="5" class="tile" style="left: 115px; top:115px; background-position: -105px -105px;"></div>
-    <div  id="6" class="tile" style="left: 230px; top:115px; background-position: -210px -105px;"></div>
-    <div  id="7" class="tile" style="left: 345px; top:115px; background-position: -315px -105px;"></div>
+  <div class="span8">
 
-    <div  id="8" class="tile" style="left: 0px; top:230px; background-position: -0px -210px;"></div>
-    <div  id="9" class="tile" style="left: 115px; top:230px; background-position: -105px -210px;"></div>
-    <div id="10" class="tile" style="left: 230px; top:230px; background-position: -210px -210px;"></div>
-    <div id="11" class="tile" style="left: 345px; top:230px; background-position: -315px -210px;"></div>
+    <div id="board">
+      <div  id="0" class="tile" style="left: 0px; top: 0px; background-position: -0px -0px;"></div>
+      <div  id="1" class="tile" style="left: 115px; top: 0px; background-position: -105px -0px;"></div>
+      <div  id="2" class="tile" style="left: 230px; top: 0px; background-position: -210px -0px;"></div>
+      <div  id="3" class="tile" style="left: 345px; top: 0px; background-position: -315px -0px;"></div>
 
-    <div id="12" class="tile" style="left: 0px; top: 345px; background-position: -0px -315px;"></div>
-    <div id="13" class="tile" style="left: 115px; top: 345px; background-position: -105px -315px;"></div>
-    <div id="14" class="tile" style="left: 230px; top: 345px; background-position: -210px -315px;"></div>
-    <!-- the empty tile -->
-</div>
+      <div  id="4" class="tile" style="left: 0px; top:115px; background-position: -0px -105px;"></div>
+      <div  id="5" class="tile" style="left: 115px; top:115px; background-position: -105px -105px;"></div>
+      <div  id="6" class="tile" style="left: 230px; top:115px; background-position: -210px -105px;"></div>
+      <div  id="7" class="tile" style="left: 345px; top:115px; background-position: -315px -105px;"></div>
 
-<div id="preload">
-  <img src="img/bee.png" alt="bee" />
-  <img src="img/cow.png" alt="cow" />
-  <img src="img/elephant.png" alt="elephant" />
-</div>
+      <div  id="8" class="tile" style="left: 0px; top:230px; background-position: -0px -210px;"></div>
+      <div  id="9" class="tile" style="left: 115px; top:230px; background-position: -105px -210px;"></div>
+      <div id="10" class="tile" style="left: 230px; top:230px; background-position: -210px -210px;"></div>
+      <div id="11" class="tile" style="left: 345px; top:230px; background-position: -315px -210px;"></div>
+
+      <div id="12" class="tile" style="left: 0px; top: 345px; background-position: -0px -315px;"></div>
+      <div id="13" class="tile" style="left: 115px; top: 345px; background-position: -105px -315px;"></div>
+      <div id="14" class="tile" style="left: 230px; top: 345px; background-position: -210px -315px;"></div>
+      <!-- the empty tile -->
+    </div>
+
+  </div>
+  <div class="span4">
+    <h3>Choose Your Own Image!</h3>
+    <img class="select" src="img/bee.png" width="80" height="80" alt="bee" />
+    <img class="select" src="img/cow.png" width="80" height="80" alt="cow" />
+    <img class="select" src="img/elephant.png" width="80" height="80" alt="elephant" />
+  </div>
+
+</div><!-- /.row -->
+
+<div class="row">
+  <div class="span12">
+    <p class="c">
+      Thanks to .....!
+    </p>
+  </div>
+</div><!-- /.row -->

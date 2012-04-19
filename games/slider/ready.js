@@ -138,4 +138,13 @@ $(function() {
         makeMove(pos, id);
     });
 
+    // now, enable the user to change images
+    $('.select').click(function(ev) {
+        ev.preventDefault();
+
+        var img = $(this).attr('src');
+        $('.tile').css({
+            'background-image' : 'url(' + img + ')'
+        });
+    });
 });
