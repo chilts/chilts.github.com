@@ -1,0 +1,17 @@
+
+#board {
+    width: 420px;
+    height: 420px;
+    margin: auto;
+    position: relative;
+}
+
+.tile {
+    position: absolute;
+    width: 105px;
+    height: 105px;
+}
+
+#preload {
+    display: none;
+}

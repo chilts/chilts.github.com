@@ -14,6 +14,11 @@
     <!-- styles -->
     <link href="{{ ASSET_PATH }}/bootstrap-2.0.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    {% if page.css %}
+      {% for css in page.css %}
+    <link href="{{ css }}" rel="stylesheet" type="text/css">
+      {% endfor %}
+    {% endif %}
 
     <!-- JavaScript -->
     <!--[if lt IE 9]>
@@ -79,6 +84,12 @@
       </footer>
 
     </div> <!-- /.container -->
+
+    {% if page.js %}
+      {% for js in page.js %}
+    <script type="text/javascript" src="{{ js }}"></script>
+      {% endfor %}
+    {% endif %}
 
     {% include google-analytics %}
 
