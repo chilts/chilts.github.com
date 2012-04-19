@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Memory Match</title>
+    <link rel="stylesheet" type="text/css" media="all" href="/s/css/960/reset.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/s/css/960/text.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/s/css/960/960.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="styles.min.css" />
+  </head>
+
+  <body>
+    <div class="container_12">
+
+      <h1>Memory Match</h1>
+
+      <p>
+        Click a card to show it's face, then click a second. If not a match they will turn back over. If it is a match,
+        they disappear! Play until all cards are gone. Have fun! :)
+      </p>
+
+      <p class="c">
+        <button id="start">Start Game</button>
+      </p>
+
+      <div class="grid_12">
+        <div class="grid_2 alpha">
+          <div class="card front"><img src="i/alligator.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2">
+          <div class="card front"><img src="i/bat.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2">
+          <div class="card front"><img src="i/bear.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2">
+          <div class="card front"><img src="i/bee.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2">
+          <div class="card front"><img src="i/bird.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2 omega">
+          <div class="card front"><img src="i/bull.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+      </div>
+
+      <div class="grid_12">
+        <div class="grid_2 alpha">
+          <div class="card front"><img src="i/cat.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2">
+          <div class="card front"><img src="i/chicken.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2">
+          <div class="card front"><img src="i/cow.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2">
+          <div class="card front"><img src="i/crab.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2">
+          <div class="card front"><img src="i/crocodile.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2 omega">
+          <div class="card front"><img src="i/deer.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+      </div>
+
+      <div class="grid_12">
+        <div class="grid_2 alpha">
+          <div class="card front"><img src="i/dog.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2">
+          <div class="card front"><img src="i/donkey.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2">
+          <div class="card front"><img src="i/duck.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2">
+          <div class="card front"><img src="i/eagle.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2">
+          <div class="card front"><img src="i/elephant.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+        <div class="grid_2 omega">
+          <div class="card front"><img src="i/fish.png" width="64" height="64" /></div>
+          <div class="card back hide"><img src="star.png" width="64" height="64" /></div>
+        </div>
+      </div>
+
+      <p style="text-align: right;">
+        Written by <a href="http://www.chilts.org/blog/">Andrew Chilton</a>
+        of <a href="http://www.appsattic.com/">AppsAttic</a>. Animal icons courtesy
+        of <a href="http://www.graphics-and-desktop-icons.com/animal-icons.html">Graphics and Desktop Icons</a>.
+      </p>
+
+    </div>
+
+    <div id="preload">
+      <img src="i/alligator.png" alt="alligator" />
+      <img src="i/ant.png" alt="ant" />
+      <img src="i/bat.png" alt="bat" />
+      <img src="i/bear.png" alt="bear" />
+      <img src="i/bee.png" alt="bee" />
+      <img src="i/bird.png" alt="bird" />
+      <img src="i/bulldog.png" alt="bulldog" />
+      <img src="i/bull.png" alt="bull" />
+      <img src="i/butterfly.png" alt="butterfly" />
+      <img src="i/cat.png" alt="cat" />
+      <img src="i/chicken.png" alt="chicken" />
+      <img src="i/cow.png" alt="cow" />
+      <img src="i/crab.png" alt="crab" />
+      <img src="i/crocodile.png" alt="crocodile" />
+      <img src="i/deer.png" alt="deer" />
+      <img src="i/dog.png" alt="dog" />
+      <img src="i/donkey.png" alt="donkey" />
+      <img src="i/duck.png" alt="duck" />
+      <img src="i/eagle.png" alt="eagle" />
+      <img src="i/elephant.png" alt="elephant" />
+      <img src="i/fish.png" alt="fish" />
+      <img src="i/fox.png" alt="fox" />
+      <img src="i/frog.png" alt="frog" />
+      <img src="i/giraffe.png" alt="giraffe" />
+      <img src="i/gorilla.png" alt="gorilla" />
+      <img src="i/hippo.png" alt="hippo" />
+      <img src="i/horse.png" alt="horse" />
+      <img src="i/insect.png" alt="insect" />
+      <img src="i/lion.png" alt="lion" />
+      <img src="i/monkey.png" alt="monkey" />
+      <img src="i/moose.png" alt="moose" />
+      <img src="i/mouse.png" alt="mouse" />
+      <img src="i/owl.png" alt="owl" />
+      <img src="i/panda.png" alt="panda" />
+      <img src="i/penguin.png" alt="penguin" />
+      <img src="i/pig.png" alt="pig" />
+      <img src="i/rabbit.png" alt="rabbit" />
+      <img src="i/rhino.png" alt="rhino" />
+      <img src="i/rooster.png" alt="rooster" />
+      <img src="i/shark.png" alt="shark" />
+      <img src="i/sheep.png" alt="sheep" />
+      <img src="i/snake.png" alt="snake" />
+      <img src="i/tiger.png" alt="tiger" />
+      <img src="i/turkey.png" alt="turkey" />
+      <img src="i/turtle.png" alt="turtle" />
+      <img src="i/wolf.png" alt="wolf" />
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="jquery.easing-1.3.js"></script>
+    <script type="text/javascript" src="jquery.transit-0.1.3.min.js"></script>
+    <script type="text/javascript" src="ready.js"></script>
+
+  </body>
+
+</html>

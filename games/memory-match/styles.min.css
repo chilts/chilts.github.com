@@ -1,0 +1,10 @@
+.grid_12{margin-bottom:20px}
+.grid_2{background-color:#eee;height:140px}
+.grid_2 div.card{margin:20px;width:100px;height:100px;border:1px solid #333}
+.grid_2 div.card img{margin:18px;width:64px;height:64px}
+.grid_2 div.back{background-color:red}
+.grid_2 div.front{background-color:orange}
+.c{text-align:center}
+.hide{display:none}
+img{display:block;position:relative}
+div#preload{display:none}
