@@ -29,6 +29,14 @@ $(function() {
     // ---
     // general purpose functions
 
+    function visitAllTiles(fn) {
+        for ( var j = 0; j < 4; j++ ) {
+            for ( var i = 0; i < 4; i++ ) {
+                fn(j, i, grid[j][i]);
+            }
+        }
+    }
+
     function findId(id) {
         for ( var i = 0; i < 4; i++ ) {
             for ( var j = 0; j < 4; j++ ) {
@@ -53,27 +61,24 @@ $(function() {
 
     function randomiseTiles() {
         var tmp, pos;
-        for ( var j = 0; j < 4; j++ ) {
-            for ( var i = 0; i < 4; i++ ) {
-                // get a random tile
-                pos = randomTilePos();
+        visitAllTiles(function(j, i, id) {
+            // get a random tile
+            pos = randomTilePos();
 
-                // switch it with this position
-                tmp = grid[j][i];
-                grid[j][i] = grid[pos.j][pos.i];
-                grid[pos.j][pos.i] = tmp;
+            // switch it with this position
+            grid[j][i] = grid[pos.j][pos.i];
+            grid[pos.j][pos.i] = id;
 
-                // put these two tiles into the right position on the board
-                $($tiles[grid[j][i]]).animate({
-                    'top'  : ( j * tilesize ) + 'px',
-                    'left' : ( i * tilesize ) + 'px',
-                });
-                $($tiles[grid[pos.j][pos.i]]).animate({
-                    'top'  : ( pos.j * tilesize ) + 'px',
-                    'left' : ( pos.i * tilesize ) + 'px',
-                });
-            }
-        }
+            // put these two tiles into the right position on the board
+            $($tiles[grid[j][i]]).animate({
+                'top'  : ( j * tilesize ) + 'px',
+                'left' : ( i * tilesize ) + 'px',
+            });
+            $($tiles[grid[pos.j][pos.i]]).animate({
+                'top'  : ( pos.j * tilesize ) + 'px',
+                'left' : ( pos.i * tilesize ) + 'px',
+            });
+        });
     }
 
     function checkComplete() {
