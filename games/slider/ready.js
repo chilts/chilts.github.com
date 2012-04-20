@@ -61,24 +61,42 @@ $(function() {
 
     function randomiseTiles() {
         var tmp, pos;
-        visitAllTiles(function(j, i, id) {
-            // get a random tile
-            pos = randomTilePos();
+        mode = 'randomising';
+        if ( false ) {
+            visitAllTiles(function(j, i, id) {
+                // get a random tile
+                pos = randomTilePos();
 
-            // switch it with this position
-            grid[j][i] = grid[pos.j][pos.i];
-            grid[pos.j][pos.i] = id;
+                // switch it with this position
+                grid[j][i] = grid[pos.j][pos.i];
+                grid[pos.j][pos.i] = id;
 
-            // put these two tiles into the right position on the board
-            $($tiles[grid[j][i]]).animate({
-                'top'  : ( j * tilesize ) + 'px',
-                'left' : ( i * tilesize ) + 'px',
+                // put these two tiles into the right position on the board
+                $($tiles[grid[j][i]]).animate({
+                    'top'  : ( j * tilesize ) + 'px',
+                    'left' : ( i * tilesize ) + 'px',
+                });
+                $($tiles[grid[pos.j][pos.i]]).animate({
+                    'top'  : ( pos.j * tilesize ) + 'px',
+                    'left' : ( pos.i * tilesize ) + 'px',
+                });
             });
-            $($tiles[grid[pos.j][pos.i]]).animate({
-                'top'  : ( pos.j * tilesize ) + 'px',
-                'left' : ( pos.i * tilesize ) + 'px',
-            });
-        });
+        }
+
+        // for 100 times (waiting for the animation each time)
+        var loop = 0;
+        function moveAgain() {
+            if ( loop < 200 ) {
+                var id = chooseTileToMove();
+                makeMove(id, 1, moveAgain);
+                loop++;
+            }
+            else {
+                mode = 'play';
+            }
+        }
+        // set the randomise thing off
+        moveAgain();
     }
 
     function checkComplete() {
@@ -123,10 +141,10 @@ $(function() {
 
         // * play
         tileMoving = false;
-        $tiles.stop(true);
+        $tiles.stop(true, true);
 
         // * end
-        $cars.fadeOut().stop(true);
+        $cars.fadeOut();
         clearTimeout(endSequence);
 
         if ( mode === 'intro' ) {
@@ -146,6 +164,8 @@ $(function() {
             // make the board disappear
             $board.fadeOut(function() {
                 $roundabout.fadeIn();
+                // randomise the tile image for the next time
+                randomImage();
             });
 
             function animateCar($el) {
@@ -154,17 +174,17 @@ $(function() {
                 }
 
                 $el.animate({
-                    'left' : [ 0, 'easeOutQuad' ],
-                    'top' : [ 200, 'easeInQuad' ]
+                    'left' : [ 0, 'easeOutSine' ],
+                    'top' : [ 200, 'easeInSine' ]
                 }, 1000).animate({
-                    'left' : [ 200, 'easeInQuad' ],
-                    'top' : [ 400, 'easeOutQuad' ]
+                    'left' : [ 200, 'easeInSine' ],
+                    'top' : [ 400, 'easeOutSine' ]
                 }, 1000).animate({
-                    'left' : [ 400, 'easeOutQuad' ],
-                    'top' : [ 200, 'easeInQuad' ]
+                    'left' : [ 400, 'easeOutSine' ],
+                    'top' : [ 200, 'easeInSine' ]
                 }, 1000).animate({
-                    'left' : [ 200, 'easeInQuad' ],
-                    'top' : [ 0, 'easeOutQuad' ]
+                    'left' : [ 200, 'easeInSine' ],
+                    'top' : [ 0, 'easeOutSine' ]
                 }, 1000, function() {
                     animateCar($el);
                 });
@@ -203,15 +223,10 @@ $(function() {
         return ( Math.random() > 0.5 ? 1 : -1 );
     }
 
-    function randomMove() {
-        // only do this if we're in the intro
-        if ( mode !== 'intro' ) {
-            // ToDo: we could cancel the interval here (which we'd have to restart at the relevant time
-            return;
-        }
-
+    // returns a tile id which is next to the blank tile
+    function chooseTileToMove() {
         var pos = findId(15);
-        var id;
+
         // choose which direction to fill
         if ( chooseDirection() === 'x' ) {
             if ( pos.i === 0 ) {
@@ -243,13 +258,28 @@ $(function() {
                 id = grid[pos.j+flipflop][pos.i];
             }
         }
+        return id;
+    }
+
+    function randomMove() {
+        // only do this if we're in the intro
+        if ( mode !== 'intro' ) {
+            // ToDo: we could cancel the interval here (which we'd have to restart at the relevant time
+            return;
+        }
+
+        var id = chooseTileToMove();
+
         // now move the chosen tile
         $($tiles[id]).click();
     }
 
-    function makeMove(pos, id) {
+    function makeMove(id, duration, cb) {
+        var pos = findId(id);
         var i = pos.i;
         var j = pos.j;
+        duration = duration || 150;
+        cb = cb || function(){};
 
         // check above
         if ( j > 0 ) {
@@ -257,11 +287,13 @@ $(function() {
                 tileMoving = true;
                 $($tiles[id]).animate(
                     { 'top' : '-=115' },
+                    duration,
                     function() {
                         grid[j-1][i] = grid[j][i];
                         grid[j][i] = 15;
                         checkComplete();
                         tileMoving = false;
+                        cb();
                     }
                 );
                 return;
@@ -274,11 +306,13 @@ $(function() {
                 tileMoving = true;
                 $($tiles[id]).animate(
                     { 'top' : '+=115' },
+                    duration,
                     function() {
                         grid[j+1][i] = grid[j][i];
                         grid[j][i] = 15;
                         checkComplete();
                         tileMoving = false;
+                        cb();
                     }
                 );
                 return;
@@ -291,11 +325,13 @@ $(function() {
                 tileMoving = true;
                 $($tiles[id]).animate(
                     { 'left' : '-=115' },
+                    duration,
                     function() {
                         grid[j][i-1] = grid[j][i];
                         grid[j][i] = 15;
                         checkComplete();
                         tileMoving = false;
+                        cb();
                     }
                 );
                 return;
@@ -308,11 +344,13 @@ $(function() {
                 tileMoving = true;
                 $($tiles[id]).animate(
                     { 'left' : '+=115' },
+                    duration,
                     function() {
                         grid[j][i+1] = grid[j][i];
                         grid[j][i] = 15;
                         checkComplete();
                         tileMoving = false;
+                        cb();
                     }
                 );
                 return;
@@ -322,12 +360,16 @@ $(function() {
     }
 
     // for all of the tiles, add the background image
-    $('.tile').css({
-        'background-image' : 'url(' + $('.select:random').attr('src') + ')'
-    });
+    function randomImage() {
+        $('.tile').css({
+            'background-image' : 'url(' + $('.select:random').attr('src') + ')'
+        });
+    }
+    randomImage();
 
     $('.tile').click(function(ev) {
         ev.preventDefault();
+
         // only move if a tile isn't already moving
         if ( tileMoving ) {
             return;
@@ -337,13 +379,12 @@ $(function() {
         var $this = $(this);
         var id = $this.attr('id');
         id = parseInt(id);
-        var pos = findId(id);
 
         // now make the tile move if it's ok
-        makeMove(pos, id);
+        makeMove(id);
     });
 
-    $('#start').click(function(ev) {
+    $('#shuffle').click(function(ev) {
         ev.preventDefault();
         if ( mode === 'play' ) {
             // just re-arrange the tiles
@@ -353,11 +394,6 @@ $(function() {
             // set the mode so we go through all the steps
             setMode('play');
         }
-    });
-
-    $('#end').click(function(ev) {
-        ev.preventDefault();
-        setMode('end');
     });
 
     // now, enable the user to change images
