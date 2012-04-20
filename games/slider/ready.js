@@ -105,6 +105,7 @@ $(function() {
 
     var introSequence;
     var tileMoving = false; // used when in play
+    var endSequence;
 
     function setMode(newMode) {
         // only do this if the mode changes
@@ -126,6 +127,7 @@ $(function() {
 
         // * end
         $cars.fadeOut().stop(true);
+        clearTimeout(endSequence);
 
         if ( mode === 'intro' ) {
             introSequence = setInterval(randomMove, 250);
@@ -181,6 +183,11 @@ $(function() {
                     });
                 }, 4000 / $cars.size() * i);
             });
+
+            // only show the end sequence for 10ss, then switch to the intro again
+            endSequence = setTimeout(function() {
+                setMode('intro');
+            }, 10000);
         }
     }
 
