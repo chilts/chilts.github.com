@@ -333,7 +333,14 @@ $(function() {
 
     $('#start').click(function(ev) {
         ev.preventDefault();
-        setMode('play');
+        if ( mode === 'play' ) {
+            // just re-arrange the tiles
+            randomiseTiles();
+        }
+        else {
+            // set the mode so we go through all the steps
+            setMode('play');
+        }
     });
 
     $('#end').click(function(ev) {
