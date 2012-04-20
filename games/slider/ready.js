@@ -19,9 +19,12 @@ $(function() {
         [ 12, 13, 14, 15 ]
     ];
 
-    var mode = 'intro';
+    var mode = '';
+    var $board = $('#board');
     var $tiles = $('.tile');
     var tilesize = 115;
+    var $roundabout = $('#roundabout');
+    var $cars = $('.car');
 
     // ---
     // general purpose functions
@@ -89,8 +92,8 @@ $(function() {
             }
         }
 
-        // might be finished
-        console.log("Well done, you've won!");
+        // the person has won
+        setMode('end');
     }
 
     // ---
@@ -99,26 +102,80 @@ $(function() {
     var tileMoving = false; // used when in play
 
     function setMode(newMode) {
-        // stop the previous modes
+        // only do this if the mode changes
+        if ( mode === newMode ) {
+            return;
+        }
+
+        // set the new mode
+        mode = newMode;
+
+        // stop all of the previous modes
 
         // * intro
         clearInterval(introSequence);
 
         // * play
         tileMoving = false;
+        $tiles.stop(true);
 
-        // * completed
-        // ToDo
+        // * end
+        $cars.fadeOut().stop(true);
 
-        mode = newMode;
         if ( mode === 'intro' ) {
             introSequence = setInterval(randomMove, 250);
+            $roundabout.fadeOut(function() {
+                $board.fadeIn();
+            });
         }
         if ( mode === 'play' ) {
-            // stop all animation
-            $tiles.stop();
             // randomise the board
             randomiseTiles();
+            $roundabout.fadeOut(function() {
+                $board.fadeIn();
+            });
+        }
+        if ( mode === 'end' ) {
+            // make the board disappear
+            $board.fadeOut(function() {
+                $roundabout.fadeIn();
+            });
+
+            function animateCar($el) {
+                if ( mode !== 'end' ) {
+                    return;
+                }
+
+                $el.animate({
+                    'left' : [ 0, 'easeOutQuad' ],
+                    'top' : [ 200, 'easeInQuad' ]
+                }, 1000).animate({
+                    'left' : [ 200, 'easeInQuad' ],
+                    'top' : [ 400, 'easeOutQuad' ]
+                }, 1000).animate({
+                    'left' : [ 400, 'easeOutQuad' ],
+                    'top' : [ 200, 'easeInQuad' ]
+                }, 1000).animate({
+                    'left' : [ 200, 'easeInQuad' ],
+                    'top' : [ 0, 'easeOutQuad' ]
+                }, 1000, function() {
+                    animateCar($el);
+                });
+            }
+
+            // hide the cars, then make the appear progressively
+            $cars.hide();
+            $cars.each(function(i, el) {
+                var $el = $(el);
+                $el.css({
+                    'left' : 200, 'top' : 0
+                });
+                setTimeout(function() {
+                    $el.fadeIn(function() {
+                        animateCar($el);
+                    });
+                }, 4000 / $cars.size() * i);
+            });
         }
     }
 
@@ -277,6 +334,11 @@ $(function() {
     $('#start').click(function(ev) {
         ev.preventDefault();
         setMode('play');
+    });
+
+    $('#end').click(function(ev) {
+        ev.preventDefault();
+        setMode('end');
     });
 
     // now, enable the user to change images
