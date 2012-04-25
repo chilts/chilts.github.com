@@ -6,9 +6,8 @@
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
 
-    {% if page.category %}
-    <link rel="alternate" type="application/rss+xml" title="chilts.org - RSS feed" href="http://chilts.org/{{ page.category }}/rss20.xml" />
-    <link rel="alternate" type="application/x.atom+xml" title="chilts.org - Atom Feed" href="http://chilts.org/{{ page.category }}/atom.xml" />
+    {% if page.category != null %}
+    <link rel="alternate" type="application/x.atom+xml" title="chilts.org - Atom Feed" href="http://feeds.feedburner.com/ChiltsOrg-{{ page.category | camelcase }}" />
     {% endif %}
 
     <!-- styles -->
@@ -49,7 +48,9 @@
   {% endfor %}
           </ul>
           <div class="pull-right" style="padding: 4px;">
-            {{ page.category | camelcase }}: <a href="feeds.feedburner.com/ChiltsOrg-{{ page.category | camelcase }}"><img src="/s/img/rss-32x32.png"></a>
+  {% if page.category != null %}
+            {{ page.category | camelcase }}: <a href="http://feeds.feedburner.com/ChiltsOrg-{{ page.category | camelcase }}"><img src="/s/img/rss-32x32.png"></a>
+  {% endif %}
           </div>
         </div>
       </div>
