@@ -49,7 +49,7 @@
   {% endfor %}
           </ul>
           <div class="pull-right" style="padding: 4px;">
-            <a href="feeds.feedburner.com/ChiltsOrg-Blog"><img src="/s/img/rss-32x32.png"></a>
+            {{ page.category | camelcase }}: <a href="feeds.feedburner.com/ChiltsOrg-{{ page.category | camelcase }}"><img src="/s/img/rss-32x32.png"></a>
           </div>
         </div>
       </div>
