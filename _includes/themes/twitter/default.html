@@ -6,7 +6,7 @@
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
 
-    {% if page.category != null %}
+    {% if page.category != nil %}
     <link rel="alternate" type="application/x.atom+xml" title="chilts.org - Atom Feed" href="http://feeds.feedburner.com/ChiltsOrg-{{ page.category | camelcase }}" />
     {% endif %}
 
