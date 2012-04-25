@@ -7,7 +7,7 @@
     <meta name="author" content="{{ site.author.name }}">
 
     {% if page.category %}
-    <link rel="alternate" type="application/x.atom+xml" title="chilts.org - Atom Feed" href="http://feeds.feedburner.com/ChiltsOrg-{{ page.category | camelcase }}" />
+    <link rel="alternate" type="application/x.atom+xml" title="chilts.org - Atom Feed" href="http://feeds.feedburner.com/ChiltsOrg-{{ page.category | camelize | split: '-' | join: '' }}" />
     {% endif %}
 
     <!-- styles -->
@@ -49,7 +49,7 @@
           </ul>
           <div class="pull-right" style="padding: 4px;">
   {% if page.category %}
-            {{ page.category | camelcase }}: <a href="http://feeds.feedburner.com/ChiltsOrg-{{ page.category | camelcase }}"><img src="/s/img/rss-32x32.png"></a>
+            {{ page.category | capitalize | replace: '-', ' ' }}: <a href="http://feeds.feedburner.com/ChiltsOrg-{{ page.category | camelize | split: '-' | join: ''  }}"><img src="/s/img/rss-32x32.png"></a>
   {% endif %}
           </div>
         </div>
