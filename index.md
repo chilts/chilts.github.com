@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Andy Chilton
-tagline: -> otherwise know as 'chilts' <-
+tagline: as 'chilts'
 ---
 You have probably arrived here in search of:
 
