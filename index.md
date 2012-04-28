@@ -12,6 +12,15 @@ You have probably arrived here in search of:
 
 ... or something else entirely.
 
-You can also find some other web presences such as my GitHub account - (chilts)[http://github.com/chilts/].
+You can also find me on some other web presences:
+
+* [GitHub](https://github.com/chilts/)
+* [Twitter](https://twitter.com/andychilton)
+* [Google+](https://plus.google.com/101676799407822585755/)
+* [Ohloh](http://www.ohloh.net/accounts/chilts)
+* [CPAN](http://search.cpan.org/~chilts/)
+* [Flickr](http://www.flickr.com/photos/andychilton/)
+* [CoderWall](http://coderwall.com/andychilton)
+* [LinkedIn](http://www.linkedin.com/profile/view?id=34320615)
 
 (Ends)
