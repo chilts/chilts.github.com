@@ -28,6 +28,8 @@ topnav:
   url  : /recipe/
 - text : Retire at 40
   url  : /retire-at-40/
+- text : Simplicity
+  url  : /simplicity/
 - text : Wiki
   url  : /wiki/
 - text : About
