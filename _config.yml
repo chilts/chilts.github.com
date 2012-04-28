@@ -30,6 +30,8 @@ topnav:
   url  : /retire-at-40/
 - text : Simplicity
   url  : /simplicity/
+- text : Photos
+  url  : /photo/
 - text : Wiki
   url  : /wiki/
 - text : About

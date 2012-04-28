@@ -9,6 +9,7 @@ You have probably arrived here in search of:
 * some [recipes](/recipe/)
 * my personal finance blog [Retire at 40](/retire-at-40/)
 * [Simplicity](/retire-at-40/) itself
+* a couple of [Photos](/photo/)
 
 ... or something else entirely.
 
