@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Hello, World!
+title: Andy Chilton
+tagline: -> otherwise know as 'chilts' <-
 ---
 You have probably arrived here in search of:
 
@@ -10,5 +11,7 @@ You have probably arrived here in search of:
 * [Simplicity](/retire-at-40/) itself
 
 ... or something else entirely.
+
+You can also find some other web presences such as my GitHub account - (chilts)[http://github.com/chilts/].
 
 (Ends)
