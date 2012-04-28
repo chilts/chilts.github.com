@@ -1,0 +1,49 @@
+---
+category: simplicity
+layout: recipe
+title: Amalgamate your Online Presences
+published: true
+tags: [ using-the-internet, simplifying-life ]
+---
+Over the past 5 years or so, I have bought and ignored domain names, started up and stopped a great number of websites and launched a number of blogs and stopped posting.
+
+*Why so many?*
+
+Because I have many interests.
+
+*Why have they all stopped?*
+
+Because they are on the periphery, they're a distraction, never being given the chance to shine by having regular posts.
+
+I have generally posted regularly to my main blog (though this year was an exception). I have also posted to other blogs in fits and starts. My interest in particular subjects grow, I get excited, then it wanes. Instead, what I need to do is keep them ticking along. Even just 2 or 3 posts a week to any of these blogs and that would be happy and healthy.
+
+h2. Merging all my Identities
+
+By having all of my blogs in the same place it will make it "much easier to maintain":/blog/site-now-on-appengine.html it all. I won't have any sysadmin work to do, I won't have to have a huge number of usernames and passwords and I also won't have to go and audit my comments either.
+
+All of this leads to a *huge* amount of simplicity in my life. Not to mention not having to re-buy all of those domain names each year.
+
+So now, all of the following are all on this site:
+
+* my "Personal Blog":/blog/
+* "Retire at 40":/retire-at-40/
+* "Simplicity":/simplicity/
+
+... as well as my "writing":/writing/, "wiki":/wiki/ and some other bits and pieces (some content yet to be migrated).
+
+h2. The Advantages
+
+* *Simplicity*. Having to remember less means I get more time in the day to think about other things.
+* *Google Juice*. By amalgamating my blogs and other sites, all links end up coming to the same site. This is a good thing.
+* *One RSS Feed to Rule them All*. Some people just like my personal blog, or my "Retire at 40" blog. Others this one. However, the "top level site feed":http://feeds.feedburner.com/ChiltsOrg means you get everything posted onto the site in your feed reader.
+
+h2. The Disadvantages
+
+Each site might be good on it's own, if I were able to put all of my time into them. Instead, I want to concentrate on just a few blogs but instead have the other blogs right there so I can post to them every so often. These wouldn't be worth having their own sites, even if those sites could prosper if given the right attention.
+
+I may also lose the ability to monetise those blogs independently but I don't mind actually keeping things simple in this department too. Most of what I publish will be free of adverts though this may change in the future if I so decide.
+
+Finally, I will lose some 'brand' identity for each blog but instead I'll gain 'brand' identity for me. I'm happy with this since it might turn out well and in all honesty, it's a bit of an experiment.
+
+All in all, this is going to be a new adventure and hopefully a happy and simple one :)
+

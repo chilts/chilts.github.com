@@ -1,0 +1,51 @@
+---
+category: simplicity
+layout: recipe
+title: Be SMART in your Goals
+published: true
+tags: [ achievements ]
+---
+Over on Retire at 40 I just posted an entry called "The Real Goal":/retire-at-40/the-real-goal.html. The goal is to retire by the time I'm 40. Now usually, to most people, that means to stop working, but for me it isn't as simple as that.
+
+What I had to do then, was actually _define_ what I meant by retiring at 40. To do that I had to set out a list of my goals that I wanted to fulfil such that, in 6 years time I can look back and say "Yep, I made it to 40 and I'm retired".
+
+To be able to do this however, you can't be flippant in what your goals are, you need to define them thoroughly. You can try and make some things up but in all honesty, the time-tested, tried and true method of doing this is to Be SMART.
+
+* S = Specific
+* M = Measurable
+* A = Attainable
+* R = Realistic
+* T = Timely
+
+Each and every goal you ever write down, you should try and conform to the above. The way I see it is, ask yourself some questions of your goal and if you can't answer them, then the goal needs to be change such that it can. Also, sometimes the question might not even make sense - and again the goal needs to be rewritten such that it can.
+
+By following this guide you can be sure that setting your goals is a simple and painless exercise.
+
+h2. The Questions
+
+The first question is about being specific:
+
+bq. Do you know exactly what you have to do?
+
+Is it measurable:
+
+bq. How will I know if I have achieved my goal?
+
+Then you need to know if you can even do it:
+
+bq. Without breaking myself or my family, will I be able to reach the end of my goal?
+
+If it isn't realistic, then it's not a good goal. Ask yourself:
+
+bq. Is this goal something that an everyday person can do?
+
+Finally, you need to set a time limit:
+
+bq. When am I going to review this goal and figure out if I have done it or not?
+
+If you can answer all of those questions, then you probably have a well defined goal. There are a few things to remember however. Firstly, you should review your goal regularly as you go along. This is to make sure that the goal is still relevant.
+
+Also, if this goal is pretty big, then split it up into mini-goals which all contribute to this one. Make sure you have an answer to each of these questions for the mini-goals too, otherwise they're not good goals.
+
+Finally, good luck on achieving whatever it is you are setting out to do. Feel free to leave any comments on your experiences setting out and achieving your goals.
+
