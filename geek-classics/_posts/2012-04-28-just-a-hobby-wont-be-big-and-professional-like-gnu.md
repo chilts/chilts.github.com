@@ -7,18 +7,18 @@ tags: [ linux, unix ]
 ---
 ## Linus Torvalds Announcement of Linux ##
 
-```
+<pre>
 Path: gmdzi!unido!fauern!ira.uka.de!sol.ctr.columbia.edu!zaphod.mps.ohio-state.edu!wupost!uunet!mcsun!news.funet.fi!hydra!klaava!torvalds
 From: torva...@klaava.Helsinki.FI (Linus Benedict Torvalds)
 Newsgroups: comp.os.minix
 Subject: What would you like to see most in minix?
 Summary: small poll for my new operating system
 Keywords: 386, preferences
-Message-ID: <1991Aug25.205708.9541@klaava.Helsinki.FI>
+Message-ID: &lt;1991Aug25.205708.9541@klaava.Helsinki.FI&gt;
 Date: 25 Aug 91 20:57:08 GMT
 Organization: University of Helsinki
 Lines: 20
-```
+</pre>
 
 Hello everybody out there using minix -
 
