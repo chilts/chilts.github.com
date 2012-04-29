@@ -6,7 +6,7 @@ published: true
 tags: [ unix ]
 ---
 
-Original article: [http://www.ee.ryerson.ca:8080/~elf/hack/recovery.html].
+Original article: [Unix Recovery Legend](http://www.ee.ryerson.ca:8080/~elf/hack/recovery.html).
 
 ## Unix Recovery Legend ##
 
