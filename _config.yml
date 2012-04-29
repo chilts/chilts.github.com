@@ -24,6 +24,8 @@ paginator: false
 topnav:
 - text : Blog
   url  : /blog/
+- text : Geek Classics
+  url  : /geek-classics/
 - text : Recipes
   url  : /recipe/
 - text : Retire at 40
