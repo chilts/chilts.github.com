@@ -5,6 +5,8 @@ title: Hacker Demigods
 published: true
 tags: [ joke ]
 ---
+## Stallman, Torvalds and Knuth chatting ... ##
+
 Richard M. Stallman, Linus Thorvalds [sic], and Donald E. Knuth engage in a discussion on whose impact on the
 computerized world was the greatest.
 
