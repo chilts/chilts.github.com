@@ -18,7 +18,6 @@ Message-ID: &lt;1991Aug25.205708.9541@klaava.Helsinki.FI&gt;
 Date: 25 Aug 91 20:57:08 GMT
 Organization: University of Helsinki
 Lines: 20
-</pre>
 
 Hello everybody out there using minix -
 
@@ -39,3 +38,4 @@ are welcome, but I won't promise I'll implement them :-)
 PS.  Yes - it's free of any minix code, and it has a multi-threaded fs. 
 It is NOT protable (uses 386 task switching etc), and it probably never
 will support anything other than AT-harddisks, as that's all I have :-(. 
+</pre>
