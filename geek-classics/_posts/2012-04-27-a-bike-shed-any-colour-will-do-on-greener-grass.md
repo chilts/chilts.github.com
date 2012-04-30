@@ -10,9 +10,9 @@ tags: [ programming ]
 
 <pre>
 Subject: A bike shed (any colour will do) on greener grass...
-From: Poul-Henning Kamp <phk@freebsd.org>
+From: Poul-Henning Kamp &lt;phk@freebsd.org&gt;
 Date: Sat, 02 Oct 1999 16:14:10 +0200
-Message-ID: <18238.938873650@critter.freebsd.dk>
+Message-ID: &lt;18238.938873650@critter.freebsd.dk&gt;
 Sender: phk@critter.freebsd.dk
 Bcc: Blind Distribution List: ;
 MIME-Version: 1.0
