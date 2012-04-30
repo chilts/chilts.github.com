@@ -19,6 +19,13 @@ author :
 url : http://chilts.org
 permalink: /:categories/:title.html
 paginator: false
+atom:
+  blog: ChiltsOrg-Blog
+  geek-classics: ChiltsOrg-GeekClassics
+  recipe: ChiltsOrg-Recipe
+  retire-at-40: ChiltsOrg-RetireAt40
+  simplicity: ChiltsOrg-Simplicity
+  photo: ChiltsOrg-Photos
 
 # topnav
 topnav:
