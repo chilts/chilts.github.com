@@ -9,7 +9,7 @@ category: simplicity
 ## Getting the Right Amount of Sleep ##
 
 Since the last time I wrote on 'Simplicity', I have had quite a few changes in my life ... but in some ways, it doesn't
-m they are. The fact is, no matter where we are in life, what we are doing, who we are with or what we plan to do,
+mean they are. The fact is, no matter where we are in life, what we are doing, who we are with or what we plan to do,
 there is always scope for making things more simple.
 
 And what is the latest thing I want to do, well, it's an age-old subject that I've already spoken about once on this
@@ -28,4 +28,4 @@ I also found an older three part post regarding all of this on Steve Pavlina's s
 
 So put those on your reading list and let's take it from here. :)
 
-And the all-important getting up time ... mine is 6am? What's yours?
+**And the all-important getting up time ... mine is 6am? What's yours?** (Email me, see below.)
