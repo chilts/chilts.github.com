@@ -55,7 +55,7 @@ So you may end up with a set of directories and files such as this:
 So essentially every service has a 'provider/service' pair much like the AwsSum libraries (in the case of Twitter it
 would be 'twitter/twitter') and then each data liberation script would organise it's own backup directory in the
 appropriate way for each service. In some cases it might be directories and files (as above), in others it might be a
-JSON, CSV or XML file (or more). Think 'tweets.json', 'friends.json', 'direct_messages.json', 'images/*' and various
+JSON, CSV or XML file (or more). Think 'tweets.json', 'friends.json', 'direct_messages.json', 'images/\*' and various
 other created files.
 
 As I said, it wouldn't prescribe what you do with that data, but just that you can get it. After that, moving to more
