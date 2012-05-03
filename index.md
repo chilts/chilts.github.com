@@ -33,38 +33,25 @@ You can also find me on some other web presences:
 
 ## My Open Source Software ##
 
-          <ul>
-            <li>Node.js
-              <ul>
-                <li><a href="https://github.com/appsattic/winston-simpledb">winston-simpledb</a> - SimpleDB transport for 'winston'</li>
-                <li><a href="https://github.com/appsattic/connect-error-amazon-ses">connect-error-amazon-ses</a> - connect middleware to send errors as email through Amazon SES</li>
-                <li><a href="https://github.com/appsattic/connect-uuid">connect-uuid</a> - connect middleware to assign a UUID to every request</li>
-                <li><a href="Connect middleware to assign a UUID to every request">coupon-code</a> - Implementation of Perl's Algorithm::CouponCode for NodeJS</li>
-                <li><a href="https://github.com/appsattic/sensi">sensi</a> - experimental start to open source IaaS</li>
-                <li><a href="https://github.com/appsattic/serve-this">serve-this.js</a> - example static file server
-              </ul>
-            </li>
-            <li>Perl
-              <ul>
-                <li><a href="https://github.com/appsattic/awssum">Project AwsSum</a> - original AwsSum project</li>
-                <li><a href="https://github.com/appsattic/libdate-recur-perl">Date::Recur</a> - original date recurrance project</li>
-                <li><a href="https://github.com/appsattic/dropmail">DropMail</a> - drop a JSON file into a directory and DropMail will send it</li>
-                <li><a href="https://github.com/chilts/pgpatcher">PgPatcher</a> - script to help patch/unpatch Pg schemas when deploying</li>
-                <li><a href="https://github.com/appsattic/conduit">Conduit</a> (base class for CGI::Fast apps)</li>
-                <li><a href="https://github.com/appsattic/projectus">Projectus</a> - helper modules for any Perl project</li>
-                <li><a href="https://github.com/appsattic/String-Random-NiceURL">String::Random::NiceURL</a> - create random ID strings suitable for URLs</li>
-                <li><a href="https://github.com/appsattic/dropfile">dropfile</a> - drop a file into a dir, get pushed to Amazon S3 automatically</li>
-                <li><a href="https://github.com/chilts/zaapt">Zaapt</a> - CMS for Perl/Mason/PostgreSQL</li>
-              </ul>
-            </li>
-
-            <li>Python
-              <ul>
-                <li><a href="https://gitorious.org/lollysite/lollysite">Lollyside</a> - simple CMS for Google AppEngine</li>
-              </ul>
-            </li>
-
-          </ul>
+* Node.js
+     * [winston-simpledb](https://github.com/appsattic/winston-simpledb) - SimpleDB transport for 'winston'
+     * [connect-error-amazon-ses](https://github.com/appsattic/connect-error-amazon-ses) - connect middleware to send errors as email through Amazon SES
+     * [connect-uuid](https://github.com/appsattic/connect-uuid) - connect middleware to assign a UUID to every request
+     * [coupon-code](Connect middleware to assign a UUID to every request) - Implementation of Perl's Algorithm::CouponCode for NodeJS
+     * [sensi](https://github.com/appsattic/sensi) - experimental start to open source IaaS
+     * [serve-this.js](https://github.com/appsattic/serve-this) - example static file s
+* Perl
+     * [Project AwsSum](https://github.com/appsattic/awssum) - original AwsSum project
+     * [Date::Recur](https://github.com/appsattic/libdate-recur-perl) - original date recurrance project
+     * [DropMail](https://github.com/appsattic/dropmail) - drop a JSON file into a directory and DropMail will send it
+     * [PgPatcher](https://github.com/chilts/pgpatcher) - script to help patch/unpatch Pg schemas when deploying
+     * [Conduit](https://github.com/appsattic/conduit) (base class for CGI::Fast apps)
+     * [Projectus](https://github.com/appsattic/projectus) - helper modules for any Perl project
+     * [String::Random::NiceURL](https://github.com/appsattic/String-Random-NiceURL) - create random ID strings suitable for URLs
+     * [dropfile](https://github.com/appsattic/dropfile) - drop a file into a dir, get pushed to Amazon S3 automatically
+     * [Zaapt](https://github.com/chilts/zaapt) - CMS for Perl/Mason/PostgreSQL
+* Python
+     * [Lollyside](https://gitorious.org/lollysite/lollysite) - simple CMS for Google AppEngine
 
     </td>
     <td>
