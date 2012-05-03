@@ -1,8 +1,8 @@
 ---
 category: blog
 layout: post
-title: Introducing Node AwsSum
-tagline: "'O' is for AwsSum"
+title: AwsSum's Overall Plan
+tagline: "Data Liberation"
 published: true
 tags : [amazon, aws, nodejs, javascript, webapi]
 ---
