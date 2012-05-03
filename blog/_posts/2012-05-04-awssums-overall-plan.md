@@ -4,7 +4,7 @@ layout: post
 title: AwsSum's Overall Plan
 tagline: "Data Liberation"
 published: true
-tags : [amazon, aws, nodejs, javascript, webapi]
+tags : [amazon, aws, nodejs, javascript, webapi, awssum]
 ---
 In my [previous article](node-awssum.html), I introduced AwsSum even though it's been around for about 6 months
 now. It's maturing nicely, let's put it that way. But apart from adding more and more Web APIs to AwsSum, what plans do

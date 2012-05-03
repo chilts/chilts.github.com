@@ -4,7 +4,7 @@ layout: post
 title: Introducing Node AwsSum
 tagline: "'O' is for AwsSum"
 published: true
-tags : [amazon, aws, nodejs, javascript, webapi]
+tags : [amazon, aws, nodejs, javascript, webapi, awssum]
 ---
 Over on my [author page on NPM](http://search.npmjs.org/#/_author/Andrew%20Chilton) I now have 7 packages available to
 download and install. However, the one I've put the most time into is the
