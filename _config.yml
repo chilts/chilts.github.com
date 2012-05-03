@@ -31,6 +31,8 @@ atom:
 topnav:
 - text : Blog
   url  : /blog/
+- text : JavaScript Games
+  url  : /games/
 - text : Geek Classics
   url  : /geek-classics/
 - text : Recipes
