@@ -1,6 +1,7 @@
 ---
-layout: default
-title: About 'chilts'
+layout : default
+title : About 'chilts'
+sitemap : true
 ---
 
 ## chilts ##

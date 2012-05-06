@@ -1,7 +1,8 @@
 ---
-layout: page
-title: Games
-tagline: Made lovingly with JavaScript
+layout : page
+title : Games
+tagline : Made lovingly with JavaScript
+sitemap : true
 ---
 My first game is a game for young kids, it's called [Memory Match](./memory-match/). Have fun!
 
