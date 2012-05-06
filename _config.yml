@@ -45,8 +45,6 @@ topnav:
   url  : /photo/
 - text : Wiki
   url  : /wiki/
-- text : About
-  url  : /about.html
 
 # Meta
 meta:
