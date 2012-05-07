@@ -1,7 +1,7 @@
 ---
 category: blog
 layout: post
-title: Using async.queue() as a State Machine
+title: Using Queues in a State Machine
 tagline: "Hopping from one state to another"
 published: true
 tags : [awssum, amazon, s3, async, nodejs, queue]
