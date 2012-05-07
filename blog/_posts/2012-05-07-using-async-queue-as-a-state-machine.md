@@ -31,9 +31,12 @@ your 'my-photos' directory.
 
 The second thing it will do in the future is to upload any files you have on disk which you don't already have in S3.
 
+One thing it doesn't do is delete data, either in your bucket or on disk. That's a no-no and that's for you to do
+yourself.
+
 And there is one final thing which it explicitely does not do. If a file exists on disk AND in S3 and they are not the
-same (different length, different MD5) the program tells you about it and DOES NOTHING AT ALL to fix it. That's your
-job! ;)
+same (ie. different length or different MD5) the program tells you about it and DOES NOTHING AT ALL to fix it. That's
+your job! ;)
 
 ## How does it do it ##
 
@@ -43,19 +46,33 @@ it knows about in the bucket. This may consist of one or more requests since you
 
 Once we have the entire list we start shuffling those items around in queues. As I said, there are five queues:
 
-* "Check Item is Local" Queue - checks to see if the item has a corresponding file on disk
-    * if so, then the item is pushed onto the "Check Local Dir Exists" Queue
-    * if not, then push the item onto the "For Download" Queue
-    * Note: if it does exist but is of the wrong length, a message is given to a user to resolve the conflict
-* "Check Local Dir Exists" Queue - just checks that directories exist for keys such as 'path/to/file.txt'
-    * if it does exist, the item is pushed onto the "Check MD5's are the Same" Queue
-    * if it doesn't the dir is created and the item pushed onto the "Create Tmp File" Queue
-* "Check MD5's are the Same" Queue - checks that the MD5s are the same for the Key and the File
-    * if so, then do nothing with the item (the item and file mirror each other)
-    * if not, then inform the user to resolve the conflict
-* "Create Tmp File" Queue - just create a tmp file in /tmp/ so that we can write to it when downloading the file
-    * once created, the item is pushed onto the "For Download" Queue
-* "For Download" Queue - downloads the item to a temporary file and renames it into place in your directory
+<ul>
+  <li>&quot;Check Item is Local&quot; Queue - checks to see if the item has a corresponding file on disk
+    <ul>
+      <li>if so, then the item is pushed onto the &quot;Check Local Dir Exists&quot; Queue</li>
+      <li>if not, then push the item onto the &quot;For Download&quot; Queue</li>
+      <li>Note: if it does exist but is of the wrong length, a message is given to a user to resolve the conflict</li>
+    </ul>
+  </li>
+  <li>&quot;Check Local Dir Exists&quot; Queue - just checks that directories exist for keys such as 'path/to/file.txt'
+    <ul>
+      <li>if it does exist, the item is pushed onto the &quot;Check MD5's are the Same&quot; Queue</li>
+      <li>if it doesn't the dir is created and the item pushed onto the &quot;Create Tmp File&quot; Queue</li>
+    </ul>
+  </li>
+  <li>&quot;Check MD5's are the Same&quot; Queue - checks that the MD5s are the same for the Key and the File
+    <ul>
+      <li>if so, then do nothing with the item (the item and file mirror each other)</li>
+      <li>if not, then inform the user to resolve the conflict</li>
+    </ul>
+  </li>
+  <li>&quot;Create Tmp File&quot; Queue - just create a tmp file in /tmp/ so that we can write to it when downloading the file
+    <ul>
+      <li>once created, the item is pushed onto the &quot;For Download&quot; Queue</li>
+    </ul>
+  </li>
+  <li>&quot;For Download&quot; Queue - downloads the item to a temporary file and renames it into place in your directory</li>
+</ul>
 
 This may all sound a bit crazy, but there are a couple of reasons for all this.
 
