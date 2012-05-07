@@ -106,6 +106,6 @@ Usually I write stuff to expand on what I know but in this case there were three
 
 Anyway, have fun and happy hacking. :)
 
-- Chilts
+Chilts
 
 (Ends)
