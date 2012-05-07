@@ -49,8 +49,8 @@ Once we have the entire list we start shuffling those items around in queues. As
 <ul>
   <li>&quot;Check Item is Local&quot; Queue - checks to see if the item has a corresponding file on disk
     <ul>
-      <li>if so, then the item is pushed onto the &quot;Check Local Dir Exists&quot; Queue</li>
-      <li>if not, then push the item onto the &quot;For Download&quot; Queue</li>
+      <li>if so, then the item is pushed onto the &quot;Check MD5s are the Same&quot; Queue</li>
+      <li>if not, then push the item onto the &quot;Check Local Dir Exists&quot; Queue</li>
       <li>Note: if it does exist but is of the wrong length, a message is given to a user to resolve the conflict</li>
     </ul>
   </li>
@@ -60,7 +60,7 @@ Once we have the entire list we start shuffling those items around in queues. As
       <li>if it doesn't the dir is created and the item pushed onto the &quot;Create Tmp File&quot; Queue</li>
     </ul>
   </li>
-  <li>&quot;Check MD5's are the Same&quot; Queue - checks that the MD5s are the same for the Key and the File
+  <li>&quot;Check MD5s are the Same&quot; Queue - checks that the MD5s are the same for the Key and the File
     <ul>
       <li>if so, then do nothing with the item (the item and file mirror each other)</li>
       <li>if not, then inform the user to resolve the conflict</li>
