@@ -2,7 +2,7 @@
 category: blog
 layout: post
 title: Using Queues in a State Machine
-tagline: "Hopping from one state to another"
+tagline: "Hopping from One State to Another"
 published: true
 tags : [awssum, amazon, s3, async, nodejs, queue]
 ---
