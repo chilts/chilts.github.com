@@ -7,3 +7,4 @@ sitemap: false
 {{ site.url }}{{ post.url }}{% endfor %}
 {% for page in site.pages %}
 {% if page.sitemap %}{{ site.url }}{{ page.url }}{% endif %}{% endfor %}
+http://chilts.org/games/memory-match/index.html
