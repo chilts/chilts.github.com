@@ -10,5 +10,6 @@ This is just the things that I want to remember. If they become useful to you, t
 ## Quick Links to Useful Pages ##
 
 * [Bookmarks](bookmarks.html)
+* [Network Tools](network-tools.html)
 
 (Ends)
